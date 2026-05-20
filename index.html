@@ -1,368 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advika Rathi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream: #f5f0e8;
-      --ink: #1a1612;
-      --rust: #b5451b;
-      --muted: #7a7168;
-      --line: #d4cfc6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 18px;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    /* ── NOISE TEXTURE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
-    /* ── LAYOUT ── */
-    .wrapper {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── HEADER ── */
-    header {
-      padding: 5rem 0 3rem;
-      border-bottom: 1px solid var(--line);
-      opacity: 0;
-      animation: fadeUp 0.9s ease forwards;
-    }
-
-    .eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1.2rem;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--rust);
-    }
-
-    .tagline {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-top: 1.2rem;
-    }
-
-    /* ── NAV ── */
-    nav {
-      padding: 1.4rem 0;
-      border-bottom: 1px solid var(--line);
-      opacity: 0;
-      animation: fadeUp 0.9s 0.15s ease forwards;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--rust); }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--line);
-      opacity: 0;
-      animation: fadeUp 0.9s ease forwards;
-    }
-
-    section:nth-of-type(1) { animation-delay: 0.3s; }
-    section:nth-of-type(2) { animation-delay: 0.45s; }
-    section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.75s; }
-
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.2rem;
-    }
-
-    p {
-      color: #3d3830;
-      font-size: 1.05rem;
-      max-width: 600px;
-    }
-
-    /* ── INTERESTS GRID ── */
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      margin-top: 2rem;
-    }
-
-    .interest-card {
-      padding: 1.6rem 1.4rem;
-      border: 1px solid var(--line);
-      transition: background 0.2s;
-    }
-
-    .interest-card:hover { background: #ede8df; }
-
-    .interest-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .interest-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .interest-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ── PROJECTS ── */
-    .project-list { margin-top: 1.5rem; }
-
-    .project-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--line);
-      gap: 1rem;
-    }
-
-    .project-item:last-child { border-bottom: none; }
-
-    .project-name {
-      font-size: 1.15rem;
-      font-weight: 400;
-    }
-
-    .project-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--rust);
-      white-space: nowrap;
-    }
-
-    /* ── CONTACT ── */
-    .contact-links {
-      display: flex;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .contact-links a:hover {
-      color: var(--rust);
-      border-color: var(--rust);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2.5rem 0;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.9s ease forwards;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    footer p {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    /* ── ANIMATION ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advika Rathi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --cream: #f5f0e8;
+            --ink: #1a1612;
+            --rust: #b5451b;
+            --muted: #7a7168;
+            --line: #d4cfc6;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        /* ── NOISE TEXTURE OVERLAY ── */
+        
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        /* ── LAYOUT ── */
+        
+        .wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        /* ── HEADER ── */
+        
+        header {
+            padding: 5rem 0 3rem;
+            border-bottom: 1px solid var(--line);
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards;
+        }
+        
+        .eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rust);
+            margin-bottom: 1.2rem;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+        
+        h1 em {
+            font-style: italic;
+            color: var(--rust);
+        }
+        
+        .tagline {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 1.2rem;
+        }
+        /* ── NAV ── */
+        
+        nav {
+            padding: 1.4rem 0;
+            border-bottom: 1px solid var(--line);
+            opacity: 0;
+            animation: fadeUp 0.9s 0.15s ease forwards;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--rust);
+        }
+        /* ── SECTIONS ── */
+        
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--line);
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards;
+        }
+        
+        section:nth-of-type(1) {
+            animation-delay: 0.3s;
+        }
+        
+        section:nth-of-type(2) {
+            animation-delay: 0.45s;
+        }
+        
+        section:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
+        
+        section:nth-of-type(4) {
+            animation-delay: 0.75s;
+        }
+        
+        .section-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rust);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+        }
+        
+        p {
+            color: #3d3830;
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+        /* ── INTERESTS GRID ── */
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1px;
+            border: 1px solid var(--line);
+            margin-top: 2rem;
+        }
+        
+        .interest-card {
+            padding: 1.6rem 1.4rem;
+            border: 1px solid var(--line);
+            transition: background 0.2s;
+        }
+        
+        .interest-card:hover {
+            background: #ede8df;
+        }
+        
+        .interest-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        
+        .interest-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 0.4rem;
+        }
+        
+        .interest-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        /* ── PROJECTS ── */
+        
+        .project-list {
+            margin-top: 1.5rem;
+        }
+        
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--line);
+            gap: 1rem;
+        }
+        
+        .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .project-name {
+            font-size: 1.15rem;
+            font-weight: 400;
+        }
+        
+        .project-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--rust);
+            white-space: nowrap;
+        }
+        /* ── CONTACT ── */
+        
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        
+        .contact-links a:hover {
+            color: var(--rust);
+            border-color: var(--rust);
+        }
+        /* ── FOOTER ── */
+        
+        footer {
+            padding: 2.5rem 0;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.9s ease forwards;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        footer p {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+        /* ── ANIMATION ── */
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="wrapper">
+    <div class="wrapper">
 
-    <header>
-      <p class="eyebrow">Portfolio · 2026</p>
-      <h1>Advika <em>Rathi</em></h1>
-      <p class="tagline">Marketing · Babson College · AI Enthusiast</p>
-    </header>
+        <header>
+            <p class="eyebrow">Portfolio · 2026</p>
+            <h1>Advika <em>Rathi</em></h1>
+            <p class="tagline">Marketing · Babson College · AI Enthusiast</p>
+        </header>
 
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-    <section id="about">
-      <p class="section-label">01 — About</p>
-      <h2>Marketing meets intelligence.</h2>
-      <p>
-        I'm a senior at Babson College studying Marketing, with a strong interest in AI and its applications in business.
-        This site highlights my academic and professional experience for recruiters and collaborators —
-        including my resume, selected projects, and ways to connect.
-      </p>
-    </section>
+        <section id="about">
+            <p class="section-label">01 — About</p>
+            <h2>Marketing meets intelligence.</h2>
+            <p>
+                I'm a senior at Babson College studying Marketing, with a strong interest in AI and its applications in business. This site highlights my academic and professional experience for recruiters and collaborators — including my resume, selected projects, and
+                ways to connect.
+            </p>
+        </section>
 
-    <section id="interests">
-      <p class="section-label">02 — Interests</p>
-      <h2>What drives me.</h2>
-      <div class="interests-grid">
-        <div class="interest-card">
-          <div class="interest-icon">✦</div>
-          <p class="interest-title">AI & Marketing</p>
-          <p class="interest-desc">Exploring how artificial intelligence transforms brand strategy and consumer behavior.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">◈</div>
-          <p class="interest-title">Brand Strategy</p>
-          <p class="interest-desc">Crafting narratives that resonate — from positioning to campaign execution.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">⬡</div>
-          <p class="interest-title">Consumer Insights</p>
-          <p class="interest-desc">Understanding what makes people click, buy, and stay loyal to a brand.</p>
-        </div>
-        <div class="interest-card">
-          <div class="interest-icon">◎</div>
-          <p class="interest-title">Entrepreneurship</p>
-          <p class="interest-desc">Building ideas with purpose — the Babson way.</p>
-        </div>
-      </div>
-    </section>
+        <section id="interests">
+            <p class="section-label">02 — Interests</p>
+            <h2>What drives me.</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">✦</div>
+                    <p class="interest-title">AI & Marketing</p>
+                    <p class="interest-desc">Exploring how artificial intelligence transforms brand strategy and consumer behavior.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">◈</div>
+                    <p class="interest-title">Brand Strategy</p>
+                    <p class="interest-desc">Crafting narratives that resonate — from positioning to campaign execution.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">⬡</div>
+                    <p class="interest-title">Consumer Insights</p>
+                    <p class="interest-desc">Understanding what makes people click, buy, and stay loyal to a brand.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">◎</div>
+                    <p class="interest-title">Entrepreneurship</p>
+                    <p class="interest-desc">Building ideas with purpose — the Babson way.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-      <p class="section-label">03 — Projects</p>
-      <h2>Selected work.</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <span class="project-name">AI-Driven Campaign Strategy</span>
-          <span class="project-tag">Marketing · AI</span>
-        </div>
-        <div class="project-item">
-          <span class="project-name">Consumer Behavior Analysis</span>
-          <span class="project-tag">Research</span>
-        </div>
-        <div class="project-item">
-          <span class="project-name">Brand Positioning Playbook</span>
-          <span class="project-tag">Strategy</span>
-        </div>
-        <div class="project-item">
-          <span class="project-name">Resume</span>
-          <span class="project-tag">Download ↓</span>
-        </div>
-      </div>
-    </section>
+        <section id="projects">
+            <p class="section-label">03 — Projects</p>
+            <h2>Selected work.</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <span class="project-name">AI-Driven Campaign Strategy</span>
+                    <span class="project-tag">Marketing · AI</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Consumer Behavior Analysis</span>
+                    <span class="project-tag">Research</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Brand Positioning Playbook</span>
+                    <span class="project-tag">Strategy</span>
+                </div>
+                <div class="project-item">
+                    <span class="project-name">Resume</span>
+                    <span class="project-tag">Download ↓</span>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-      <p class="section-label">04 — Contact</p>
-      <h2>Let's connect.</h2>
-      <p>Open to internships, collaborations, and conversations about marketing and AI.</p>
-      <div class="contact-links">
-        <a href="mailto:advika@example.com">Email</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://github.com" target="_blank">GitHub</a>
-      </div>
-    </section>
+        <section id="contact">
+            <p class="section-label">04 — Contact</p>
+            <h2>Let's connect.</h2>
+            <p>Open to internships, collaborations, and conversations about marketing and AI.</p>
+            <div class="contact-links">
+                <a href="mailto:advika@example.com">Email</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+        </section>
 
-    <footer>
-      <div class="footer-inner">
-        <p>© 2026 Advika Rathi</p>
-        <p>Babson College · Class of 2027</p>
-      </div>
-    </footer>
+        <footer>
+            <div class="footer-inner">
+                <p>© 2026 Advika Rathi</p>
+                <p>Babson College · Class of 2027</p>
+            </div>
+        </footer>
 
-  </div>
+    </div>
 </body>
+
 </html>
