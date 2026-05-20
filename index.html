@@ -1,2860 +1,368 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="description" content="The DR Foundation empowers marginalised and differently-abled youth through chess, scholarships, and healthcare. Section 8 non-profit, New Delhi. 80G certified." />
-    <meta name="theme-color" content="#1a0808" />
-    <title>DR Foundation — Empowering through Education, Sport &amp; Health</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advika Rathi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --ink: #1a1612;
+      --rust: #b5451b;
+      --muted: #7a7168;
+      --line: #d4cfc6;
+    }
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devanshirathifoundation.wordpress.com/" />
-    <meta property="og:title" content="DR Foundation — Every move changes the game" />
-    <meta property="og:description" content="Empowering marginalised youth through chess, scholarships and healthcare. Section 8 non-profit. 80G certified." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=1200" />
-    <meta property="og:image:alt" content="Chess board — DR Foundation" />
-    <meta property="og:site_name" content="DR Foundation" />
-    <meta property="og:locale" content="en_IN" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@d_r_foundation" />
-    <meta name="twitter:title" content="DR Foundation — Every move changes the game" />
-    <meta name="twitter:description" content="Empowering marginalised youth through chess, scholarships and healthcare." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=1200" />
-    <link rel="canonical" href="https://devanshirathifoundation.wordpress.com/" />
-    <meta name="robots" content="index, follow" />
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%231a0808'/%3E%3Ctext y='75' x='5' font-size='76' font-family='Georgia,serif' font-style='italic' font-weight='700' fill='%23c9a050'%3ED%3C/text%3E%3Ctext y='80' x='38' font-size='68' font-family='Georgia,serif' font-style='italic' font-weight='700' fill='%23b52020'%3ER%3C/text%3E%3C/svg%3E"
-    />
+    html { scroll-behavior: smooth; }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-    <style>
-        /* ── TOKENS ─────────────────────────────────────────────── */
-        
-         :root {
-            --crimson: #b52020;
-            --crimson2: #8f1818;
-            --crimson-l: rgba(181, 32, 32, .12);
-            --gold: #c9a050;
-            --gold2: #a8813a;
-            --gold-l: rgba(201, 160, 80, .15);
-            --dark: #1a0808;
-            --dark2: #261010;
-            --dark3: #321818;
-            --cream: #faf7f2;
-            --cream2: #f3ede3;
-            --cream3: #ebe3d5;
-            --white: #ffffff;
-            --text: #1a0808;
-            --text-mid: #5a4444;
-            --text-muted: #8a7070;
-            --border: rgba(26, 8, 8, .1);
-            --nav-h: 72px;
-            --max: 1200px;
-            --r: 6px;
-            --ease: cubic-bezier(.22, .68, 0, 1.2);
-            --ease2: cubic-bezier(.4, 0, .2, 1);
-            --serif: 'Playfair Display', Georgia, serif;
-            --sans: 'DM Sans', system-ui, sans-serif;
-        }
-        
-        [data-theme="dark"] {
-            --cream: #0e0505;
-            --cream2: #150909;
-            --cream3: #1f0d0d;
-            --text: #f0e6e6;
-            --text-mid: #b89090;
-            --text-muted: #806060;
-            --border: rgba(255, 200, 200, .08);
-            --white: #ffffff;
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-            .reveal {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-        }
-        /* ── RESET ───────────────────────────────────────────────── */
-        
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: var(--sans);
-            color: var(--text);
-            background: var(--cream);
-            overflow-x: hidden;
-            transition: background .3s, color .3s;
-        }
-        
-        img {
-            max-width: 100%;
-            display: block;
-            object-fit: cover;
-        }
-        
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        ul,
-        ol {
-            list-style: none;
-        }
-        /* ── SKIP + FOCUS ────────────────────────────────────────── */
-        
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 16px;
-            z-index: 9999;
-            background: var(--crimson);
-            color: #fff;
-            font-weight: 700;
-            padding: 12px 20px;
-            border-radius: var(--r);
-            transition: top .2s;
-        }
-        
-        .skip-link:focus {
-            top: 16px;
-        }
-        
-         :focus-visible {
-            outline: 3px solid var(--crimson);
-            outline-offset: 3px;
-            border-radius: 3px;
-        }
-        
-         :focus:not(:focus-visible) {
-            outline: none;
-        }
-        /* ── ANIMATIONS ─────────────────────────────────────────── */
-        
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            33% {
-                transform: translateY(-14px) rotate(2deg);
-            }
-            66% {
-                transform: translateY(-6px) rotate(-1deg);
-            }
-        }
-        
-        @keyframes spinSlow {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @keyframes pulseRing {
-            0% {
-                transform: scale(1);
-                opacity: .6;
-            }
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
-        
-        @keyframes countUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes boardReveal {
-            from {
-                clip-path: inset(0 100% 0 0);
-            }
-            to {
-                clip-path: inset(0 0% 0 0);
-            }
-        }
-        
-        @keyframes scrollLine {
-            0%,
-            100% {
-                opacity: 0;
-                transform: scaleY(0) translateY(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scaleY(1);
-            }
-        }
-        
-        @keyframes successPop {
-            0% {
-                transform: scale(0);
-            }
-            70% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity .7s ease, transform .7s var(--ease);
-        }
-        
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-        }
-        
-        .reveal-d1 {
-            transition-delay: .1s;
-        }
-        
-        .reveal-d2 {
-            transition-delay: .2s;
-        }
-        
-        .reveal-d3 {
-            transition-delay: .3s;
-        }
-        
-        .reveal-d4 {
-            transition-delay: .4s;
-        }
-        /* ── NAV ─────────────────────────────────────────────────── */
-        
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: var(--nav-h);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 48px;
-            z-index: 200;
-            transition: background .35s, box-shadow .35s, backdrop-filter .35s;
-        }
-        
-        .nav.scrolled {
-            background: rgba(26, 8, 8, .95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 32px rgba(0, 0, 0, .4);
-        }
-        
-        .nav-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        
-        .nav-logo-svg {
-            flex-shrink: 0;
-            transition: transform .4s var(--ease);
-        }
-        
-        .nav-logo:hover .nav-logo-svg {
-            transform: scale(1.1) rotate(-3deg);
-        }
-        
-        .nav-wordmark {
-            font-family: var(--serif);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: .02em;
-        }
-        
-        .nav-wordmark span {
-            color: var(--gold);
-        }
-        
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-right: 8px;
-        }
-        
-        .nav-links a {
-            font-size: .78rem;
-            font-weight: 500;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .8);
-            transition: color .2s;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            right: 0;
-            height: 1.5px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .25s var(--ease2);
-        }
-        
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-        
-        .nav-links a:hover::after {
-            transform: scaleX(1);
-        }
-        /* Dark toggle */
-        
-        .theme-btn {
-            width: 40px;
-            height: 22px;
-            border-radius: 11px;
-            background: rgba(255, 255, 255, .15);
-            border: 1.5px solid rgba(255, 255, 255, .2);
-            cursor: pointer;
-            position: relative;
-            flex-shrink: 0;
-            transition: background .3s, border-color .3s;
-        }
-        
-        .theme-btn:hover {
-            background: rgba(255, 255, 255, .22);
-        }
-        
-        .theme-btn[aria-pressed="true"] {
-            background: var(--crimson);
-            border-color: var(--crimson2);
-        }
-        
-        .theme-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #fff;
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            transition: transform .3s var(--ease);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9px;
-            line-height: 1;
-        }
-        
-        .theme-btn[aria-pressed="true"] .theme-thumb {
-            transform: translateX(18px);
-        }
-        
-        .nav-donate {
-            background: var(--crimson);
-            color: #fff;
-            padding: 9px 20px;
-            border-radius: var(--r);
-            font-weight: 600;
-            font-size: .78rem;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            transition: background .2s, transform .2s, box-shadow .2s;
-            white-space: nowrap;
-        }
-        
-        .nav-donate:hover {
-            background: var(--crimson2);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(181, 32, 32, .35);
-        }
-        
-        .nav-burger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-            background: none;
-            border: none;
-        }
-        
-        .nav-burger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: #fff;
-            border-radius: 2px;
-            transition: .3s;
-        }
-        
-        .mobile-drawer {
-            display: none;
-            position: fixed;
-            top: var(--nav-h);
-            left: 0;
-            right: 0;
-            background: rgba(26, 8, 8, .97);
-            backdrop-filter: blur(12px);
-            padding: 24px 32px 32px;
-            z-index: 199;
-            flex-direction: column;
-            gap: 0;
-            border-top: 1px solid rgba(255, 255, 255, .06);
-        }
-        
-        .mobile-drawer.open {
-            display: flex;
-        }
-        
-        .mobile-drawer a {
-            font-size: 1rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, .75);
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
-            transition: color .2s, padding-left .2s;
-        }
-        
-        .mobile-drawer a:hover {
-            color: var(--gold);
-            padding-left: 8px;
-        }
-        
-        .drawer-donate {
-            margin-top: 20px;
-            background: var(--crimson);
-            color: #fff !important;
-            text-align: center;
-            padding: 14px !important;
-            border-radius: var(--r);
-            font-weight: 700 !important;
-            border: none !important;
-        }
-        /* ── HERO ─────────────────────────────────────────────────── */
-        
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 640px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background: #1a0808;
-        }
-        /* Full-bleed chess photo background */
-        
-        .hero-img {
-            position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1600&q=80');
-            background-size: cover;
-            background-position: center 40%;
-            opacity: .35;
-            animation: fadeIn 1.2s ease forwards;
-        }
-        /* Warm gradient overlay — LEFT is dark for text, RIGHT is lighter */
-        
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient( 105deg, rgba(26, 8, 8, .92) 0%, rgba(26, 8, 8, .75) 45%, rgba(26, 8, 8, .3) 100%);
-        }
-        /* Animated chess pieces floating in right half */
-        
-        .hero-pieces {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: min(42vw, 500px);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 0;
-            opacity: .12;
-            pointer-events: none;
-        }
-        
-        .hero-piece-cell {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(1.4rem, 3vw, 2.8rem);
-            color: #fff;
-        }
-        
-        .hero-piece-cell.dark-sq {
-            background: rgba(181, 32, 32, .5);
-        }
-        
-        .hero-piece-cell.light-sq {
-            background: rgba(201, 160, 80, .25);
-        }
-        /* Floating large chess piece right side — visible, animated */
-        
-        .hero-queen {
-            position: absolute;
-            right: 8%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: min(38vw, 420px);
-            line-height: 1;
-            color: #fff;
-            opacity: .06;
-            font-family: var(--serif);
-            pointer-events: none;
-            animation: float 9s ease-in-out infinite;
-            user-select: none;
-        }
-        /* Animated ring behind logo */
-        
-        .hero-ring {
-            position: absolute;
-            top: 50%;
-            left: 48px;
-            width: 80px;
-            height: 80px;
-            transform: translateY(-50%);
-            border-radius: 50%;
-            border: 2px solid var(--crimson);
-            opacity: 0;
-            animation: pulseRing 2.5s ease-out 1.5s infinite;
-            pointer-events: none;
-        }
-        /* Scroll indicator */
-        
-        .hero-scroll {
-            position: absolute;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            animation: fadeIn 1s ease 1.4s both;
-        }
-        
-        .hero-scroll span {
-            font-size: .65rem;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .4);
-        }
-        
-        .hero-scroll-line {
-            width: 1px;
-            height: 48px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, .5), transparent);
-            animation: scrollLine 2s ease infinite;
-            transform-origin: top;
-        }
-        /* Text content */
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 48px;
-            width: 100%;
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-        
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: .7rem;
-            font-weight: 600;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 24px;
-            animation: slideInLeft .7s var(--ease) .2s both;
-        }
-        
-        .hero-eyebrow::before {
-            content: '';
-            width: 28px;
-            height: 1.5px;
-            background: var(--gold);
-        }
-        
-        .hero-h1 {
-            font-family: var(--serif);
-            font-size: clamp(2.8rem, 6.5vw, 6rem);
-            font-weight: 900;
-            line-height: 1.03;
-            color: #fff;
-            max-width: 13ch;
-            animation: fadeUp .9s var(--ease) .4s both;
-        }
-        
-        .hero-h1 em {
-            font-style: italic;
-            color: var(--gold);
-        }
-        
-        .hero-sub {
-            margin-top: 24px;
-            font-size: clamp(.95rem, 1.4vw, 1.1rem);
-            color: rgba(255, 255, 255, .75);
-            max-width: 46ch;
-            line-height: 1.72;
-            font-weight: 300;
-            animation: fadeUp .9s var(--ease) .6s both;
-        }
-        
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-top: 36px;
-            flex-wrap: wrap;
-            animation: fadeUp .9s var(--ease) .8s both;
-        }
-        
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--crimson);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: var(--r);
-            font-weight: 600;
-            font-size: .88rem;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            transition: background .2s, transform .2s, box-shadow .2s;
-        }
-        
-        .btn-primary:hover {
-            background: var(--crimson2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 32px rgba(181, 32, 32, .45);
-        }
-        
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, .85);
-            font-size: .88rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, .25);
-            padding: 14px 24px;
-            border-radius: var(--r);
-            transition: border-color .2s, color .2s, gap .2s;
-        }
-        
-        .btn-outline:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            gap: 12px;
-        }
-        /* Hero badges strip */
-        
-        .hero-badges {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-            animation: fadeUp .9s var(--ease) 1s both;
-        }
-        
-        .hero-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .hero-badge-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(201, 160, 80, .15);
-            border: 1px solid rgba(201, 160, 80, .3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .85rem;
-        }
-        
-        .hero-badge-text {
-            font-size: .78rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, .65);
-            line-height: 1.3;
-        }
-        
-        .hero-badge-text strong {
-            display: block;
-            color: var(--gold);
-            font-weight: 700;
-        }
-        /* ── STATS ────────────────────────────────────────────────── */
-        
-        .stats {
-            background: var(--crimson);
-            padding: 0 48px;
-        }
-        
-        .stats-grid {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-        
-        .stat {
-            padding: 36px 20px;
-            text-align: center;
-            border-right: 1px solid rgba(255, 255, 255, .15);
-        }
-        
-        .stat:last-child {
-            border-right: none;
-        }
-        
-        .stat-num {
-            font-family: var(--serif);
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 900;
-            color: #fff;
-            line-height: 1;
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 2px;
-        }
-        
-        .stat-suf {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            margin-top: 7px;
-            font-size: .7rem;
-            font-weight: 600;
-            letter-spacing: .11em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .7);
-        }
-        /* ── SECTION UTILITIES ───────────────────────────────────── */
-        
-        .sec-label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: .7rem;
-            font-weight: 600;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--crimson);
-            margin-bottom: 16px;
-        }
-        
-        .sec-label::before {
-            content: '';
-            width: 24px;
-            height: 2px;
-            background: var(--crimson);
-            flex-shrink: 0;
-        }
-        
-        .on-dark .sec-label {
-            color: var(--gold);
-        }
-        
-        .on-dark .sec-label::before {
-            background: var(--gold);
-        }
-        
-        .sec-h2 {
-            font-family: var(--serif);
-            font-size: clamp(1.9rem, 3vw, 2.8rem);
-            font-weight: 700;
-            line-height: 1.14;
-            color: var(--text);
-        }
-        
-        .on-dark .sec-h2 {
-            color: #fff;
-        }
-        
-        .sec-h2 em {
-            font-style: italic;
-            color: var(--crimson);
-        }
-        
-        .on-dark .sec-h2 em {
-            color: var(--gold);
-        }
-        /* ── MISSION ──────────────────────────────────────────────── */
-        
-        .mission {
-            background: var(--cream);
-            padding: 112px 48px;
-            transition: background .3s;
-        }
-        
-        .mission-grid {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .mission-body {
-            margin-top: 20px;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-mid);
-            font-weight: 300;
-        }
-        
-        .pillars {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 36px;
-        }
-        
-        .pillar {
-            background: var(--dark);
-            padding: 22px;
-            border-radius: var(--r);
-            position: relative;
-            overflow: hidden;
-            transition: transform .25s var(--ease), box-shadow .25s;
-            cursor: default;
-        }
-        
-        [data-theme="dark"] .pillar {
-            background: #1f0d0d;
-        }
-        
-        .pillar::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--crimson);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .3s var(--ease);
-        }
-        
-        .pillar:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, .2);
-        }
-        
-        .pillar:hover::after {
-            transform: scaleX(1);
-        }
-        
-        .pillar-icon {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .pillar-name {
-            font-family: var(--serif);
-            font-size: .95rem;
-            font-weight: 600;
-            color: #fff;
-        }
-        
-        .pillar-desc {
-            margin-top: 5px;
-            font-size: .78rem;
-            color: rgba(255, 255, 255, .45);
-            line-height: 1.5;
-        }
-        /* Mission visual — chessboard + photo collage */
-        
-        .mission-visual {
-            position: relative;
-        }
-        
-        .mission-chess {
-            width: 100%;
-            max-width: 440px;
-            aspect-ratio: 1;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(8, 1fr);
-            border: 3px solid var(--dark);
-            border-radius: 3px;
-            overflow: hidden;
-            box-shadow: 20px 20px 0 var(--crimson), 24px 24px 0 var(--dark2);
-            animation: boardReveal 1.2s var(--ease2) .3s both;
-        }
-        
-        [data-theme="dark"] .mission-chess {
-            border-color: #2a1212;
-            box-shadow: 20px 20px 0 var(--crimson), 24px 24px 0 #000;
-        }
-        
-        .bc {
-            position: relative;
-        }
-        
-        .bc.b {
-            background: var(--dark);
-        }
-        
-        .bc.w {
-            background: var(--cream2);
-        }
-        
-        [data-theme="dark"] .bc.w {
-            background: #c5bfb0;
-        }
-        
-        .bc.hl {
-            background: rgba(181, 32, 32, .5) !important;
-        }
-        
-        .bc.hl2 {
-            background: rgba(181, 32, 32, .25) !important;
-        }
-        
-        .bc-p {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(.55rem, 1.3vw, 1.3rem);
-        }
-        
-        .bc.b .bc-p {
-            color: rgba(255, 255, 255, .9);
-        }
-        
-        .bc.w .bc-p {
-            color: rgba(26, 8, 8, .85);
-        }
-        /* Photo floating card */
-        
-        .mission-photo {
-            position: absolute;
-            bottom: -28px;
-            right: -28px;
-            width: 160px;
-            height: 160px;
-            border-radius: var(--r);
-            overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, .3);
-            border: 3px solid #fff;
-            animation: float 8s ease-in-out 1s infinite;
-        }
-        
-        .mission-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .mission-quote-chip {
-            position: absolute;
-            bottom: -8px;
-            left: -16px;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 14px 18px;
-            border-radius: var(--r);
-            max-width: 200px;
-            box-shadow: 0 8px 24px rgba(181, 32, 32, .2);
-            animation: float 7s ease-in-out 2s infinite;
-        }
-        
-        .mission-quote-chip blockquote {
-            font-family: var(--serif);
-            font-size: .85rem;
-            font-style: italic;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-        
-        .mission-quote-chip cite {
-            display: block;
-            margin-top: 6px;
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            font-style: normal;
-            opacity: .65;
-        }
-        /* ── PROGRAMS ────────────────────────────────────────────── */
-        
-        .programs {
-            background: var(--dark);
-            padding: 112px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .programs::before {
-            content: '♛';
-            position: absolute;
-            right: -40px;
-            bottom: -60px;
-            font-size: 400px;
-            font-family: var(--serif);
-            color: rgba(255, 255, 255, .025);
-            pointer-events: none;
-            line-height: 1;
-        }
-        
-        .prg-header {
-            max-width: var(--max);
-            margin: 0 auto 56px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 24px;
-        }
-        
-        .prg-more {
-            color: var(--gold);
-            font-size: .78rem;
-            font-weight: 600;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 2px;
-            transition: border-color .2s, gap .2s;
-            flex-shrink: 0;
-        }
-        
-        .prg-more:hover {
-            border-color: var(--gold);
-            gap: 12px;
-        }
-        
-        .prg-grid {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr;
-            gap: 2px;
-            border-radius: var(--r);
-            overflow: hidden;
-        }
-        
-        .prg-card {
-            background: var(--dark2);
-            padding: 44px 32px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            transition: background .25s;
-        }
-        
-        .prg-card:hover {
-            background: var(--dark3);
-        }
-        
-        .prg-card.feat {
-            grid-row: 1/3;
-            background: var(--crimson);
-        }
-        
-        .prg-card.feat:hover {
-            background: var(--crimson2);
-        }
-        
-        .prg-num {
-            font-family: var(--serif);
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1;
-            color: rgba(255, 255, 255, .05);
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            pointer-events: none;
-        }
-        
-        .prg-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: var(--r);
-            background: rgba(255, 255, 255, .08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            margin-bottom: 24px;
-            flex-shrink: 0;
-            transition: transform .3s var(--ease);
-        }
-        
-        .prg-card:hover .prg-icon {
-            transform: scale(1.1) rotate(-6deg);
-        }
-        
-        .prg-tag {
-            display: inline-block;
-            font-size: .66rem;
-            font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            background: rgba(255, 255, 255, .1);
-            color: var(--gold);
-            padding: 3px 9px;
-            border-radius: 2px;
-            margin-bottom: 12px;
-        }
-        
-        .prg-card.feat .prg-tag {
-            color: rgba(255, 255, 255, .9);
-        }
-        
-        .prg-title {
-            font-family: var(--serif);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-        
-        .prg-card.feat .prg-title {
-            font-size: 1.85rem;
-        }
-        
-        .prg-desc {
-            font-size: .85rem;
-            line-height: 1.65;
-            color: rgba(255, 255, 255, .5);
-            flex: 1;
-        }
-        
-        .prg-card.feat .prg-desc {
-            color: rgba(255, 255, 255, .75);
-            font-size: .92rem;
-        }
-        
-        .prg-arrow {
-            margin-top: 24px;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, .15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .2s, border-color .2s, transform .2s;
-        }
-        
-        .prg-card:hover .prg-arrow {
-            background: var(--gold);
-            border-color: var(--gold);
-            transform: translateX(4px);
-        }
-        
-        .prg-card.feat:hover .prg-arrow {
-            background: rgba(255, 255, 255, .15);
-            border-color: rgba(255, 255, 255, .3);
-        }
-        /* ── SCHOLARSHIPS ────────────────────────────────────────── */
-        
-        .schols {
-            background: var(--cream2);
-            padding: 112px 48px;
-            transition: background .3s;
-        }
-        
-        [data-theme="dark"] .schols {
-            background: #150909;
-        }
-        
-        .schols-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-        
-        .schols-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: end;
-            margin-bottom: 52px;
-        }
-        
-        .schols-intro {
-            font-size: .95rem;
-            line-height: 1.75;
-            color: var(--text-mid);
-            font-weight: 300;
-        }
-        
-        .timeline {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .tl-item {
-            display: grid;
-            grid-template-columns: 72px 1fr;
-            gap: 20px;
-            padding: 22px 0;
-            border-bottom: 1px solid var(--border);
-            transition: padding-left .2s;
-        }
-        
-        .tl-item:first-child {
-            border-top: 1px solid var(--border);
-        }
-        
-        .tl-item:hover {
-            padding-left: 8px;
-        }
-        
-        .tl-year {
-            font-family: var(--serif);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: transparent;
-            -webkit-text-stroke: 1.5px var(--text-mid);
-            line-height: 1;
-            padding-top: 3px;
-            letter-spacing: -.02em;
-        }
-        
-        .tl-name {
-            font-family: var(--serif);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .tl-detail {
-            margin-top: 5px;
-            font-size: .8rem;
-            color: var(--text-mid);
-            line-height: 1.55;
-        }
-        
-        .tl-badge {
-            display: inline-block;
-            margin-top: 7px;
-            font-size: .66rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            background: var(--crimson);
-            color: #fff;
-            padding: 3px 8px;
-            border-radius: 2px;
-        }
-        /* ── IMPACT PHOTOS ───────────────────────────────────────── */
-        
-        .impact-photos {
-            background: var(--cream);
-            padding: 80px 48px;
-            transition: background .3s;
-        }
-        
-        [data-theme="dark"] .impact-photos {
-            background: #0e0505;
-        }
-        
-        .impact-photos-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-        
-        .photos-header {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            gap: 24px;
-        }
-        
-        .photo-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            grid-template-rows: 280px 220px;
-            gap: 12px;
-        }
-        
-        .photo-item {
-            border-radius: var(--r);
-            overflow: hidden;
-            position: relative;
-            background: var(--dark2);
-        }
-        
-        .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .6s var(--ease), opacity .4s;
-            opacity: .9;
-        }
-        
-        .photo-item:hover img {
-            transform: scale(1.06);
-            opacity: 1;
-        }
-        
-        .photo-item.tall {
-            grid-row: 1 / 3;
-        }
-        
-        .photo-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 32px 20px 16px;
-            background: linear-gradient(to top, rgba(26, 8, 8, .85), transparent);
-            color: #fff;
-            font-size: .8rem;
-            font-weight: 500;
-            transform: translateY(4px);
-            opacity: 0;
-            transition: transform .3s, opacity .3s;
-        }
-        
-        .photo-item:hover .photo-caption {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        /* ── STORIES ──────────────────────────────────────────────── */
-        
-        .stories {
-            background: var(--dark);
-            padding: 112px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stories::before {
-            content: '"';
-            position: absolute;
-            top: -40px;
-            left: 20px;
-            font-size: 380px;
-            font-family: var(--serif);
-            color: rgba(201, 160, 80, .06);
-            line-height: 1;
-            pointer-events: none;
-        }
-        
-        .stories-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-        
-        .stories-header {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: 48px;
-            gap: 24px;
-        }
-        
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        
-        .story-card {
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .07);
-            border-radius: var(--r);
-            padding: 32px 28px;
-            transition: border-color .3s, transform .3s, box-shadow .3s;
-        }
-        
-        .story-card:hover {
-            border-color: rgba(201, 160, 80, .3);
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, .3);
-        }
-        
-        .story-qm {
-            font-family: var(--serif);
-            font-size: 2.8rem;
-            line-height: .8;
-            color: var(--gold);
-            opacity: .7;
-            margin-bottom: 14px;
-        }
-        
-        .story-text {
-            font-size: .88rem;
-            line-height: 1.72;
-            color: rgba(255, 255, 255, .62);
-            font-style: italic;
-            font-family: var(--serif);
-        }
-        
-        .story-author {
-            margin-top: 22px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .story-av {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--crimson);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--serif);
-            font-weight: 700;
-            font-size: .85rem;
-            color: #fff;
-            flex-shrink: 0;
-        }
-        
-        .story-name {
-            font-size: .8rem;
-            font-weight: 600;
-            color: #fff;
-        }
-        
-        .story-role {
-            font-size: .72rem;
-            color: rgba(255, 255, 255, .38);
-            margin-top: 2px;
-        }
-        /* ── CONTACT ──────────────────────────────────────────────── */
-        
-        .contact {
-            background: var(--cream);
-            padding: 112px 48px;
-            transition: background .3s;
-        }
-        
-        [data-theme="dark"] .contact {
-            background: #0e0505;
-        }
-        
-        .contact-grid {
-            max-width: var(--max);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 80px;
-            align-items: start;
-        }
-        
-        .contact-info-list {
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-        
-        .ci-item {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-        }
-        
-        .ci-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--r);
-            background: var(--crimson-l);
-            border: 1px solid rgba(181, 32, 32, .2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-        
-        [data-theme="dark"] .ci-icon {
-            background: rgba(181, 32, 32, .12);
-            border-color: rgba(181, 32, 32, .25);
-        }
-        
-        .ci-label {
-            font-size: .7rem;
-            font-weight: 600;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 3px;
-        }
-        
-        .ci-val {
-            font-size: .9rem;
-            color: var(--text);
-            font-weight: 500;
-        }
-        
-        a.ci-val:hover {
-            color: var(--crimson);
-        }
-        
-        .form-box {
-            background: var(--cream2);
-            border: 1px solid var(--border);
-            border-radius: var(--r);
-            padding: 40px 36px;
-            transition: background .3s, border-color .3s;
-        }
-        
-        [data-theme="dark"] .form-box {
-            background: #1f0d0d;
-            border-color: rgba(255, 200, 200, .08);
-        }
-        
-        .form-title {
-            font-family: var(--serif);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 26px;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        
-        .fg {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-bottom: 16px;
-        }
-        
-        .fg:last-of-type {
-            margin-bottom: 0;
-        }
-        
-        .flabel {
-            font-size: .74rem;
-            font-weight: 600;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            color: var(--text-mid);
-        }
-        
-        .flabel .req {
-            color: #e05252;
-            margin-left: 2px;
-        }
-        
-        .finput,
-        .fselect,
-        .ftextarea {
-            background: var(--cream);
-            border: 1.5px solid var(--border);
-            border-radius: var(--r);
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: .9rem;
-            padding: 11px 14px;
-            width: 100%;
-            transition: border-color .2s, box-shadow .2s, background .3s, color .3s;
-            outline: none;
-        }
-        
-        [data-theme="dark"] .finput,
-        [data-theme="dark"] .fselect,
-        [data-theme="dark"] .ftextarea {
-            background: #150909;
-            border-color: rgba(255, 200, 200, .1);
-        }
-        
-        .ftextarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-        
-        .finput:hover,
-        .fselect:hover,
-        .ftextarea:hover {
-            border-color: rgba(181, 32, 32, .35);
-        }
-        
-        .finput:focus,
-        .fselect:focus,
-        .ftextarea:focus {
-            border-color: var(--crimson);
-            box-shadow: 0 0 0 3px rgba(181, 32, 32, .12);
-            outline: none;
-        }
-        
-        .finput:valid:not(:placeholder-shown) {
-            border-color: #38a169;
-        }
-        
-        .finput:invalid:not(:placeholder-shown),
-        .ftextarea:invalid:not(:placeholder-shown) {
-            border-color: #e05252;
-            box-shadow: 0 0 0 3px rgba(224, 82, 82, .1);
-        }
-        
-        .ferr {
-            font-size: .73rem;
-            color: #e05252;
-            min-height: 15px;
-            display: none;
-        }
-        
-        .fg.err .ferr {
-            display: block;
-        }
-        
-        .fg.err .finput,
-        .fg.err .ftextarea {
-            border-color: #e05252;
-            box-shadow: 0 0 0 3px rgba(224, 82, 82, .1);
-        }
-        
-        .fcheck-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin: 14px 0 18px;
-        }
-        
-        .fcheck {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-            accent-color: var(--crimson);
-            margin-top: 2px;
-            cursor: pointer;
-        }
-        
-        .fcheck-lbl {
-            font-size: .82rem;
-            color: var(--text-mid);
-            line-height: 1.5;
-            cursor: pointer;
-        }
-        
-        .fsubmit {
-            width: 100%;
-            background: var(--crimson);
-            color: #fff;
-            border: none;
-            border-radius: var(--r);
-            padding: 14px 24px;
-            font-family: var(--sans);
-            font-size: .88rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background .2s, transform .2s, box-shadow .2s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .fsubmit::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
-            transform: translateX(-100%);
-            transition: transform .6s;
-        }
-        
-        .fsubmit:hover {
-            background: var(--crimson2);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(181, 32, 32, .35);
-        }
-        
-        .fsubmit:hover::after {
-            transform: translateX(100%);
-        }
-        
-        .fsubmit:disabled {
-            opacity: .6;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .form-success {
-            display: none;
-            text-align: center;
-            padding: 32px 16px;
-        }
-        
-        .form-success.show {
-            display: block;
-        }
-        
-        .fs-icon {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-            animation: successPop .5s var(--ease);
-        }
-        
-        .fs-h {
-            font-family: var(--serif);
-            font-size: 1.3rem;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-        
-        .fs-p {
-            font-size: .88rem;
-            color: var(--text-mid);
-            line-height: 1.6;
-        }
-        /* ── CTA STRIP ───────────────────────────────────────────── */
-        
-        .cta-strip {
-            background: var(--crimson);
-            padding: 80px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-strip::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(45deg, rgba(255, 255, 255, .03) 25%, transparent 25%), linear-gradient(-45deg, rgba(255, 255, 255, .03) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, .03) 75%), linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, .03) 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-        }
-        
-        .cta-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-text h2 {
-            font-family: var(--serif);
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.1;
-        }
-        
-        .cta-text p {
-            margin-top: 10px;
-            font-size: .95rem;
-            color: rgba(255, 255, 255, .7);
-            line-height: 1.65;
-            max-width: 50ch;
-        }
-        
-        .cta-actions {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
-        
-        .cta-btn-white {
-            background: #fff;
-            color: var(--crimson);
-            padding: 14px 28px;
-            border-radius: var(--r);
-            font-weight: 700;
-            font-size: .88rem;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            transition: transform .2s, box-shadow .2s;
-        }
-        
-        .cta-btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, .15);
-        }
-        
-        .cta-btn-ghost {
-            border: 2px solid rgba(255, 255, 255, .4);
-            color: #fff;
-            padding: 14px 28px;
-            border-radius: var(--r);
-            font-weight: 600;
-            font-size: .88rem;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            transition: border-color .2s, background .2s;
-        }
-        
-        .cta-btn-ghost:hover {
-            border-color: #fff;
-            background: rgba(255, 255, 255, .1);
-        }
-        /* ── FOOTER ──────────────────────────────────────────────── */
-        
-        .footer {
-            background: #0a0202;
-            padding: 68px 48px 36px;
-        }
-        
-        .footer-inner {
-            max-width: var(--max);
-            margin: 0 auto;
-        }
-        
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr;
-            gap: 44px;
-            padding-bottom: 52px;
-            border-bottom: 1px solid rgba(255, 255, 255, .05);
-        }
-        
-        .footer-brand {
-            font-family: var(--serif);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        
-        .footer-brand span {
-            color: var(--gold);
-        }
-        
-        .footer-desc {
-            font-size: .82rem;
-            color: rgba(255, 255, 255, .35);
-            line-height: 1.65;
-            max-width: 28ch;
-        }
-        
-        .footer-legal {
-            margin-top: 16px;
-            font-size: .7rem;
-            color: rgba(255, 255, 255, .2);
-            line-height: 1.65;
-        }
-        
-        .fcol-title {
-            font-size: .69rem;
-            font-weight: 600;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, .28);
-            margin-bottom: 16px;
-        }
-        
-        .flinks {
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-        
-        .flinks a {
-            font-size: .82rem;
-            color: rgba(255, 255, 255, .42);
-            transition: color .2s;
-        }
-        
-        .flinks a:hover {
-            color: var(--gold);
-        }
-        
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 28px;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-copy {
-            font-size: .76rem;
-            color: rgba(255, 255, 255, .18);
-        }
-        
-        .footer-soc {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .footer-soc a {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, .1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: .75rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .35);
-            transition: border-color .2s, color .2s;
-        }
-        
-        .footer-soc a:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-        /* ── RESPONSIVE ──────────────────────────────────────────── */
-        
-        @media (max-width: 1024px) {
-            .mission-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-            .mission-visual {
-                display: none;
-            }
-            .prg-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .prg-card.feat {
-                grid-row: auto;
-            }
-            .schols-header {
-                grid-template-columns: 1fr;
-            }
-            .stories-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .photo-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 220px 220px;
-            }
-            .photo-item.tall {
-                grid-row: 1/3;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-top {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-             :root {
-                --nav-h: 64px;
-            }
-            .nav {
-                padding: 0 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .nav-burger {
-                display: flex;
-            }
-            .hero-content {
-                padding: 0 20px 80px;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                padding: 0 20px;
-            }
-            .stat:nth-child(2) {
-                border-right: none;
-            }
-            .mission,
-            .programs,
-            .schols,
-            .impact-photos,
-            .stories,
-            .contact,
-            .cta-strip {
-                padding: 72px 20px;
-            }
-            .prg-grid {
-                grid-template-columns: 1fr;
-            }
-            .stories-grid {
-                grid-template-columns: 1fr;
-            }
-            .pillars {
-                grid-template-columns: 1fr;
-            }
-            .photo-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .photo-item.tall {
-                grid-row: auto;
-            }
-            .photo-item {
-                height: 220px;
-            }
-            .footer {
-                padding: 44px 20px 28px;
-            }
-            .footer-top {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-            .prg-header,
-            .stories-header,
-            .photos-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .form-box {
-                padding: 28px 20px;
-            }
-            .cta-inner {
-                flex-direction: column;
-            }
-            .hero-queen {
-                display: none;
-            }
-            .hero-badges {
-                gap: 16px;
-            }
-        }
-    </style>
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ── LAYOUT ── */
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 1.2rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.15s ease forwards;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--rust); }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards;
+    }
+
+    section:nth-of-type(1) { animation-delay: 0.3s; }
+    section:nth-of-type(2) { animation-delay: 0.45s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.75s; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      color: #3d3830;
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    /* ── INTERESTS GRID ── */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      padding: 1.6rem 1.4rem;
+      border: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .interest-card:hover { background: #ede8df; }
+
+    .interest-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .interest-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .interest-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── PROJECTS ── */
+    .project-list { margin-top: 1.5rem; }
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--line);
+      gap: 1rem;
+    }
+
+    .project-item:last-child { border-bottom: none; }
+
+    .project-name {
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      white-space: nowrap;
+    }
+
+    /* ── CONTACT ── */
+    .contact-links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-links a:hover {
+      color: var(--rust);
+      border-color: var(--rust);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 0;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.9s ease forwards;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-
 <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="wrapper">
 
-    <!-- ── NAV ─────────────────────────────────────────────────── -->
     <header>
-        <nav class="nav" id="nav" aria-label="Main navigation">
-            <div class="nav-left">
-                <a href="#" class="nav-logo" aria-label="DR Foundation home">
-                    <svg class="nav-logo-svg" viewBox="0 0 68 68" width="42" height="42" aria-hidden="true" focusable="false">
-            <rect width="68" height="68" rx="8" fill="#1a0808"/>
-            <text x="4"  y="56" font-family="Georgia,serif" font-size="56" font-weight="700" font-style="italic" fill="#c9a050" opacity=".95">D</text>
-            <text x="24" y="58" font-family="Georgia,serif" font-size="52" font-weight="700" font-style="italic" fill="#b52020" opacity=".95">R</text>
-          </svg>
-                    <span class="nav-wordmark"><span>DR</span> Foundation</span>
-                </a>
-            </div>
-            <div class="nav-right">
-                <ul class="nav-links" role="list">
-                    <li><a href="#programs">Programs</a></li>
-                    <li><a href="#scholarships">Scholarships</a></li>
-                    <li><a href="#stories">Impact</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="theme-btn" id="themeBtn" aria-pressed="false" aria-label="Toggle dark mode" type="button">
-          <span class="theme-thumb" aria-hidden="true">☀️</span>
-          <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Dark mode</span>
-        </button>
-                <a href="https://www.instamojo.com/@drfoundation/" class="nav-donate" rel="noopener">Donate</a>
-                <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu" type="button">
-          <span></span><span></span><span></span>
-        </button>
-            </div>
-        </nav>
-        <nav class="mobile-drawer" id="drawer" aria-label="Mobile navigation">
-            <a href="#programs">Programs</a>
-            <a href="#scholarships">Scholarships</a>
-            <a href="#stories">Impact</a>
-            <a href="#contact">Contact</a>
-            <a href="https://www.instamojo.com/@drfoundation/" class="drawer-donate" rel="noopener">Donate Now →</a>
-        </nav>
+      <p class="eyebrow">Portfolio · 2026</p>
+      <h1>Advika <em>Rathi</em></h1>
+      <p class="tagline">Marketing · Babson College · AI Enthusiast</p>
     </header>
 
-    <main id="main">
-        <!-- ── HERO ─────────────────────────────────────────────── -->
-        <section class="hero" aria-label="DR Foundation hero">
-            <div class="hero-img" role="presentation" aria-hidden="true"></div>
-            <div class="hero-overlay" aria-hidden="true"></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-            <!-- Decorative animated chess mini-board (right side, large screens) -->
-            <div class="hero-pieces" id="heroPieces" aria-hidden="true"></div>
+    <section id="about">
+      <p class="section-label">01 — About</p>
+      <h2>Marketing meets intelligence.</h2>
+      <p>
+        I'm a senior at Babson College studying Marketing, with a strong interest in AI and its applications in business.
+        This site highlights my academic and professional experience for recruiters and collaborators —
+        including my resume, selected projects, and ways to connect.
+      </p>
+    </section>
 
-            <!-- Giant faint queen -->
-            <div class="hero-queen" aria-hidden="true">♛</div>
-            <div class="hero-ring" aria-hidden="true"></div>
-
-            <div class="hero-content">
-                <!-- Large DR logo mark in hero -->
-                <div style="margin-bottom:28px; animation:fadeUp .7s var(--ease) .1s both; display:inline-block;" aria-hidden="true">
-                    <svg viewBox="0 0 180 130" width="130" height="94" style="display:block; filter:drop-shadow(0 4px 16px rgba(181,32,32,.4))">
-            <text x="0"  y="110" font-family="Georgia,serif" font-size="120" font-weight="900" font-style="italic" fill="#c9a050" opacity=".92">D</text>
-            <text x="68" y="115" font-family="Georgia,serif" font-size="110" font-weight="900" font-style="italic" fill="#b52020" opacity=".95">R</text>
-          </svg>
-                </div>
-
-                <div class="hero-eyebrow">Section 8 Non-Profit · New Delhi · Est. 2018</div>
-
-                <h1 class="hero-h1">Every move<br /><em>changes</em><br />the game.</h1>
-
-                <p class="hero-sub">
-                    The DR Foundation empowers blind, disabled, and underprivileged youth through chess, scholarships, and healthcare — giving every young person the tools to build an extraordinary future.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="https://www.instamojo.com/@drfoundation/" class="btn-primary" rel="noopener">
-            Support Our Mission
-            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
-          </a>
-                    <a href="#programs" class="btn-outline">
-            Explore Our Work
-            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
-          </a>
-                </div>
-
-                <!-- Trust badges -->
-                <div class="hero-badges" role="list">
-                    <div class="hero-badge" role="listitem">
-                        <div class="hero-badge-icon" aria-hidden="true">♟</div>
-                        <div class="hero-badge-text">
-                            <strong>40+ Students</strong> mentored via chess
-                        </div>
-                    </div>
-                    <div class="hero-badge" role="listitem">
-                        <div class="hero-badge-icon" aria-hidden="true">🎓</div>
-                        <div class="hero-badge-text">
-                            <strong>5 Scholarship</strong> editions (2018–2021)
-                        </div>
-                    </div>
-                    <div class="hero-badge" role="listitem">
-                        <div class="hero-badge-icon" aria-hidden="true">✅</div>
-                        <div class="hero-badge-text">
-                            <strong>80G Certified</strong> tax-exempt donations
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-scroll" aria-hidden="true">
-                <span>Scroll</span>
-                <div class="hero-scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- ── STATS ─────────────────────────────────────────────── -->
-        <section class="stats" aria-label="Foundation impact statistics">
-            <div class="stats-grid">
-                <div class="stat reveal">
-                    <div class="stat-num"><span class="count" data-target="40">0</span><span class="stat-suf" aria-hidden="true">+</span></div>
-                    <div class="stat-label">Students Mentored</div>
-                </div>
-                <div class="stat reveal reveal-d1">
-                    <div class="stat-num"><span class="count" data-target="5">0</span></div>
-                    <div class="stat-label">Scholarship Editions</div>
-                </div>
-                <div class="stat reveal reveal-d2">
-                    <div class="stat-num"><span class="count" data-target="2">0</span></div>
-                    <div class="stat-label">FIDE-Rated Players</div>
-                </div>
-                <div class="stat reveal reveal-d3">
-                    <div class="stat-num"><span class="count" data-target="8">0</span><span class="stat-suf" aria-hidden="true">+</span></div>
-                    <div class="stat-label">Partner Organisations</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── MISSION ───────────────────────────────────────────── -->
-        <section class="mission" id="about" aria-labelledby="mission-h">
-            <div class="mission-grid">
-                <div>
-                    <div class="sec-label reveal">Our Mission</div>
-                    <h2 class="sec-h2 reveal reveal-d1" id="mission-h">
-                        Empowering through<br /><em>Education, Sport</em><br />and Health
-                    </h2>
-                    <p class="mission-body reveal reveal-d2">
-                        Founded in 2018 as a registered Section 8 non-profit, the DR Foundation uses chess as a vehicle for transformation. We believe a single strategic move — on or off the board — can change a young person's life. Our work reaches blind, disabled, and underprivileged
-                        youth across India, aligning with UN SDGs 3 and 4.
-                    </p>
-                    <div class="pillars reveal reveal-d3" role="list">
-                        <div class="pillar" role="listitem">
-                            <div class="pillar-icon" aria-hidden="true">♟</div>
-                            <div class="pillar-name">Sport</div>
-                            <div class="pillar-desc">Chess for cognitive and personal development</div>
-                        </div>
-                        <div class="pillar" role="listitem">
-                            <div class="pillar-icon" aria-hidden="true">📚</div>
-                            <div class="pillar-name">Education</div>
-                            <div class="pillar-desc">Scholarships and mentorship for ages 15–30</div>
-                        </div>
-                        <div class="pillar" role="listitem">
-                            <div class="pillar-icon" aria-hidden="true">🫀</div>
-                            <div class="pillar-name">Health</div>
-                            <div class="pillar-desc">Mental, dental, and menstrual health programmes</div>
-                        </div>
-                        <div class="pillar" role="listitem">
-                            <div class="pillar-icon" aria-hidden="true">🌱</div>
-                            <div class="pillar-name">Sustainability</div>
-                            <div class="pillar-desc">Long-term impact through partnerships</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mission-visual reveal reveal-d2">
-                    <div class="mission-chess" id="missionBoard" role="img" aria-label="Decorative chess board"></div>
-                    <div class="mission-photo" aria-hidden="true">
-                        <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?w=320&q=80" alt="" width="160" height="160" loading="lazy" />
-                    </div>
-                    <div class="mission-quote-chip" aria-hidden="true">
-                        <blockquote>"Chess is not just a game. It is a school of life."</blockquote>
-                        <cite>DR Foundation</cite>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── PROGRAMS ──────────────────────────────────────────── -->
-        <section class="programs" id="programs" aria-labelledby="prg-h">
-            <div class="prg-header">
-                <div>
-                    <div class="sec-label on-dark reveal">What We Do</div>
-                    <h2 class="sec-h2 on-dark reveal reveal-d1" id="prg-h">Three programs,<br /><em>one mission</em></h2>
-                </div>
-                <a href="#contact" class="prg-more reveal reveal-d2">
-          Get Involved
-          <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
-        </a>
-            </div>
-            <div class="prg-grid">
-                <article class="prg-card feat reveal">
-                    <div class="prg-num" aria-hidden="true">01</div>
-                    <div class="prg-tag">Flagship Program</div>
-                    <div class="prg-icon" aria-hidden="true">♟</div>
-                    <h3 class="prg-title">Project Checkmate</h3>
-                    <p class="prg-desc">
-                        Launched April 2016, Project Checkmate uses chess to promote education and wellbeing for underprivileged and visually impaired youth. We've trained 40+ students, produced 2 FIDE-rated players, run the Queen's Gambit Girls Chess Club, coached the top 15
-                        blind chess players in India, and partnered with Grandmasters for live sessions.
-                    </p>
-                    <div class="prg-arrow" aria-hidden="true">
-                        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
-                    </div>
-                </article>
-                <article class="prg-card reveal reveal-d1">
-                    <div class="prg-num" aria-hidden="true">02</div>
-                    <div class="prg-icon" aria-hidden="true">🎓</div>
-                    <h3 class="prg-title">DRF Scholarships</h3>
-                    <p class="prg-desc">Five editions (2018–2021) awarding cash prizes and year-long mentorship to differently-abled people aged 15–30 — from para-athletes to UPSC aspirants.</p>
-                    <div class="prg-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M2 7h10M7 2l5 5-5 5"/></svg></div>
-                </article>
-                <article class="prg-card reveal reveal-d2">
-                    <div class="prg-num" aria-hidden="true">03</div>
-                    <div class="prg-icon" aria-hidden="true">🫀</div>
-                    <h3 class="prg-title">Health Initiatives</h3>
-                    <p class="prg-desc">Mental health sessions, dental camps at NAB Delhi, menstrual hygiene education, and nutritional support — because a healthy mind powers a strong game.</p>
-                    <div class="prg-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M2 7h10M7 2l5 5-5 5"/></svg></div>
-                </article>
-                <article class="prg-card reveal reveal-d3">
-                    <div class="prg-num" aria-hidden="true">04</div>
-                    <div class="prg-icon" aria-hidden="true">🤝</div>
-                    <h3 class="prg-title">Partner Network</h3>
-                    <p class="prg-desc">We co-create with Wheeling Happiness Foundation, NAB Delhi, ISHWAR, Baala, and the ACTit Network — building programmes that create lasting change.</p>
-                    <div class="prg-arrow" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M2 7h10M7 2l5 5-5 5"/></svg></div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ── SCHOLARSHIPS ──────────────────────────────────────── -->
-        <section class="schols" id="scholarships" aria-labelledby="schol-h">
-            <div class="schols-inner">
-                <div class="schols-header">
-                    <div>
-                        <div class="sec-label reveal">Scholarship History</div>
-                        <h2 class="sec-h2 reveal reveal-d1" id="schol-h">Five editions.<br /><em>Hundreds of lives</em><br />touched.</h2>
-                    </div>
-                    <p class="schols-intro reveal reveal-d2">
-                        Each scholarship includes a full year of mentorship, speaker events, and partner programme access — not just a cash prize. Selected by essay. Open to persons with disabilities aged 15–30.
-                    </p>
-                </div>
-                <ol class="timeline" aria-label="Scholarship history">
-                    <li class="tl-item reveal">
-                        <div class="tl-year" aria-hidden="true">2018</div>
-                        <div>
-                            <div class="tl-name">Inaugural DRF Scholarships</div>
-                            <div class="tl-detail">4 winners at NAB, RK Puram, New Delhi. Selected by essay on their lives and future goals.</div><span class="tl-badge">In-Person · NAB Delhi</span></div>
-                    </li>
-                    <li class="tl-item reveal reveal-d1">
-                        <div class="tl-year" aria-hidden="true">2019</div>
-                        <div>
-                            <div class="tl-name">Second DRF Scholarships</div>
-                            <div class="tl-detail">Winners include Neeraj Sharma (chess) and Khushi Bisht. Year-long mentoring. Ayush Jaiswal later received a full scholarship to Ashoka University.</div><span class="tl-badge">In-Person · NAB Delhi</span></div>
-                    </li>
-                    <li class="tl-item reveal reveal-d2">
-                        <div class="tl-year" aria-hidden="true">2020</div>
-                        <div>
-                            <div class="tl-name">Third DRF Scholarships</div>
-                            <div class="tl-detail">First fully virtual edition. Open to persons with disabilities across all of India. 4 cash winners + participation rewards for all.</div><span class="tl-badge">Virtual · Pan-India</span></div>
-                    </li>
-                    <li class="tl-item reveal reveal-d3">
-                        <div class="tl-year" aria-hidden="true">2021</div>
-                        <div>
-                            <div class="tl-name">Devajyoti Scholarships</div>
-                            <div class="tl-detail">Co-organised with Wheeling Happiness Foundation (Dr. Deepa Malik, Paralympic Gold Medalist). 6 winners + 5 runners-up across sport, arts, UPSC, and entrepreneurship.</div><span class="tl-badge">Virtual · With Wheeling Happiness</span></div>
-                    </li>
-                    <li class="tl-item reveal reveal-d4">
-                        <div class="tl-year" aria-hidden="true">2021</div>
-                        <div>
-                            <div class="tl-name">Shaktinaari Scholarships</div>
-                            <div class="tl-detail">Focused on women aged 18–30 with disabilities. "Shaktinaari" = Women Power. 3 winners including Shalini Shaw (aspiring PhD) and Ribalin Lyngdoh (MSW student).</div><span class="tl-badge">Virtual · Women-Focused</span></div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ── PHOTO GALLERY ─────────────────────────────────────── -->
-        <section class="impact-photos" aria-labelledby="photos-h">
-            <div class="impact-photos-inner">
-                <div class="photos-header">
-                    <div>
-                        <div class="sec-label reveal">Our Work in Action</div>
-                        <h2 class="sec-h2 reveal reveal-d1" id="photos-h">Chess changes <em>everything</em></h2>
-                    </div>
-                </div>
-                <div class="photo-grid">
-                    <div class="photo-item tall reveal">
-                        <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&q=80" alt="Two players facing each other across a chess board, deep in concentration" width="600" height="700" loading="lazy" />
-                        <div class="photo-caption">Project Checkmate — concentration in play</div>
-                    </div>
-                    <div class="photo-item reveal reveal-d1">
-                        <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=500&q=80" alt="Young students studying chess together at a table" width="500" height="280" loading="lazy" />
-                        <div class="photo-caption">Teaching the next generation</div>
-                    </div>
-                    <div class="photo-item reveal reveal-d2">
-                        <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?w=500&q=80" alt="Mentor working with a student on chess strategies" width="500" height="280" loading="lazy" />
-                        <div class="photo-caption">One-on-one mentorship sessions</div>
-                    </div>
-                    <div class="photo-item reveal reveal-d1">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Students celebrating after a chess tournament" width="500" height="220" loading="lazy" />
-                        <div class="photo-caption">Scholarship award ceremony</div>
-                    </div>
-                    <div class="photo-item reveal reveal-d2">
-                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&q=80" alt="Young person writing and studying at a desk" width="500" height="220" loading="lazy" />
-                        <div class="photo-caption">Essay-based scholarship selection</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── STORIES ───────────────────────────────────────────── -->
-        <section class="stories" id="stories" aria-labelledby="stories-h">
-            <div class="stories-inner">
-                <div class="stories-header">
-                    <div>
-                        <div class="sec-label on-dark reveal">In Their Words</div>
-                        <h2 class="sec-h2 on-dark reveal reveal-d1" id="stories-h">The people<br /><em>behind the impact</em></h2>
-                    </div>
-                </div>
-                <div class="stories-grid">
-                    <article class="story-card reveal">
-                        <div class="story-qm" aria-hidden="true">"</div>
-                        <blockquote>
-                            <p class="story-text">The guidance on balancing extra-curriculars, sports, and academics was the best advice I received. The scholarship is an excellent platform for students to enhance their skills.</p>
-                        </blockquote>
-                        <div class="story-author">
-                            <div class="story-av" aria-hidden="true">A</div>
-                            <div>
-                                <div class="story-name">Ayush Jaiswal</div>
-                                <div class="story-role">2018 &amp; 2019 Winner · Full scholarship to Ashoka University</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="story-card reveal reveal-d1">
-                        <div class="story-qm" aria-hidden="true">"</div>
-                        <blockquote>
-                            <p class="story-text">Project Checkmate allowed students to play with Grandmasters and helped some children get their FIDE ratings. I am extremely proud to be associated with it.</p>
-                        </blockquote>
-                        <div class="story-author">
-                            <div class="story-av" aria-hidden="true">N</div>
-                            <div>
-                                <div class="story-name">Neeraj Sharma</div>
-                                <div class="story-role">2019 Winner · FIDE rating aspirant, Rajasthan</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="story-card reveal reveal-d2">
-                        <div class="story-qm" aria-hidden="true">"</div>
-                        <blockquote>
-                            <p class="story-text">The interactive webinars gave me a broader perspective towards failure, struggle, and life goals. They were my weekly delights — I always looked forward to them.</p>
-                        </blockquote>
-                        <div class="story-author">
-                            <div class="story-av" aria-hidden="true">M</div>
-                            <div>
-                                <div class="story-name">Muskan Patwari</div>
-                                <div class="story-role">2020 Winner · DRF Virtual Scholar</div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── CONTACT ───────────────────────────────────────────── -->
-        <section class="contact" id="contact" aria-labelledby="contact-h">
-            <div class="contact-grid">
-                <div>
-                    <div class="sec-label reveal">Get In Touch</div>
-                    <h2 class="sec-h2 reveal reveal-d1" id="contact-h">Ready to make<br /><em>your move?</em></h2>
-                    <p class="reveal reveal-d2" style="margin-top:16px;font-size:.95rem;line-height:1.75;color:var(--text-mid);font-weight:300;max-width:38ch;">
-                        Whether you want to donate, volunteer, intern, or partner — reach out and we'll respond within 48 hours.
-                    </p>
-                    <div class="contact-info-list reveal reveal-d3">
-                        <div class="ci-item">
-                            <div class="ci-icon" aria-hidden="true">✉️</div>
-                            <div>
-                                <div class="ci-label">Email</div><a href="mailto:projectcheckmate64@gmail.com" class="ci-val">projectcheckmate64@gmail.com</a></div>
-                        </div>
-                        <div class="ci-item">
-                            <div class="ci-icon" aria-hidden="true">📍</div>
-                            <div>
-                                <div class="ci-label">Registered Office</div>
-                                <div class="ci-val">A-24/8, Mohan Co-operative Industrial Area,<br/>New Delhi – 110044</div>
-                            </div>
-                        </div>
-                        <div class="ci-item">
-                            <div class="ci-icon" aria-hidden="true">📋</div>
-                            <div>
-                                <div class="ci-label">Legal</div>
-                                <div class="ci-val">CIN: U92490DL2018NPL335483 · 80G Certified</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-box reveal reveal-d2">
-                    <h3 class="form-title">Send us a message</h3>
-                    <div id="formSuccess" class="form-success" role="alert" aria-live="polite">
-                        <div class="fs-icon" aria-hidden="true">✅</div>
-                        <h3 class="fs-h">Message sent!</h3>
-                        <p class="fs-p">Thank you for reaching out. We'll get back to you within 48 hours.</p>
-                    </div>
-                    <form id="contactForm" novalidate aria-label="Contact form">
-                        <div class="form-row">
-                            <div class="fg" id="fg-name">
-                                <label class="flabel" for="fName">Name <span class="req" aria-hidden="true">*</span></label>
-                                <input class="finput" type="text" id="fName" name="name" placeholder="Your full name" required minlength="2" maxlength="80" autocomplete="name" aria-required="true" aria-describedby="err-name" />
-                                <span class="ferr" id="err-name" role="alert">Please enter your name (min 2 characters).</span>
-                            </div>
-                            <div class="fg" id="fg-email">
-                                <label class="flabel" for="fEmail">Email <span class="req" aria-hidden="true">*</span></label>
-                                <input class="finput" type="email" id="fEmail" name="email" placeholder="you@example.com" required autocomplete="email" aria-required="true" aria-describedby="err-email" />
-                                <span class="ferr" id="err-email" role="alert">Please enter a valid email address.</span>
-                            </div>
-                        </div>
-                        <div class="fg" id="fg-interest">
-                            <label class="flabel" for="fInterest">I'm interested in <span class="req" aria-hidden="true">*</span></label>
-                            <select class="fselect finput" id="fInterest" name="interest" required aria-required="true" aria-describedby="err-interest">
-                <option value="" disabled selected>Select one…</option>
-                <option value="donate">Donating</option>
-                <option value="volunteer">Volunteering</option>
-                <option value="intern">Interning</option>
-                <option value="partner">Corporate / NGO Partnership</option>
-                <option value="ambassador">Campus Ambassador</option>
-                <option value="speaker">Booking a Speaker Event</option>
-                <option value="other">Something else</option>
-              </select>
-                            <span class="ferr" id="err-interest" role="alert">Please select an option.</span>
-                        </div>
-                        <div class="fg" id="fg-message">
-                            <label class="flabel" for="fMessage">Message <span class="req" aria-hidden="true">*</span></label>
-                            <textarea class="ftextarea" id="fMessage" name="message" placeholder="Tell us about yourself and how you'd like to get involved…" required minlength="20" maxlength="1000" aria-required="true" aria-describedby="err-message"></textarea>
-                            <span class="ferr" id="err-message" role="alert">Please write a message (min 20 characters).</span>
-                        </div>
-                        <div class="fcheck-row">
-                            <input class="fcheck" type="checkbox" id="fConsent" name="consent" required aria-required="true" />
-                            <label class="fcheck-lbl" for="fConsent">I agree to be contacted by the DR Foundation regarding my enquiry. <span class="req" aria-hidden="true">*</span></label>
-                        </div>
-                        <span class="ferr" id="err-consent" role="alert" style="display:none;margin-bottom:10px;"></span>
-                        <button class="fsubmit" type="submit" id="fSubmit">
-              <span id="fSubmitTxt">Send Message</span>
-              <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
-            </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── CTA STRIP ─────────────────────────────────────────── -->
-        <section class="cta-strip" aria-labelledby="cta-h">
-            <div class="cta-inner">
-                <div class="cta-text reveal">
-                    <h2 id="cta-h">Your move matters.</h2>
-                    <p>All donations are 80G certified and tax-exempt. Whether you donate, volunteer, or partner — you are changing a young person's future.</p>
-                </div>
-                <div class="cta-actions reveal reveal-d2">
-                    <a href="https://www.instamojo.com/@drfoundation/" class="cta-btn-white" rel="noopener">Donate Now</a>
-                    <a href="#contact" class="cta-btn-ghost">Get Involved</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ── FOOTER ────────────────────────────────────────────── -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div>
-                    <div class="footer-brand"><span>DR</span> Foundation</div>
-                    <p class="footer-desc">Empowering through Education, Sport, and Health since 2018. Registered Section 8 non-profit, New Delhi.</p>
-                    <div class="footer-legal">CIN: U92490DL2018NPL335483<br />80G Certified · Income Tax Act, 1961<br />Section 8 · Companies Act, 2013</div>
-                </div>
-                <div>
-                    <div class="fcol-title">Programs</div>
-                    <ul class="flinks">
-                        <li><a href="#programs">Project Checkmate</a></li>
-                        <li><a href="#scholarships">DRF Scholarships</a></li>
-                        <li><a href="#programs">Health Initiatives</a></li>
-                        <li><a href="#programs">Partner Network</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="fcol-title">Get Involved</div>
-                    <ul class="flinks">
-                        <li><a href="https://www.instamojo.com/@drfoundation/" rel="noopener">Donate (80G)</a></li>
-                        <li><a href="#contact">Volunteer &amp; Intern</a></li>
-                        <li><a href="#contact">Partner with Us</a></li>
-                        <li><a href="#contact">Campus Ambassador</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="fcol-title">Follow Us</div>
-                    <ul class="flinks">
-                        <li><a href="https://www.facebook.com/devanshirathifoundation/" rel="noopener" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/d_r_foundation/" rel="noopener" target="_blank">Instagram</a></li>
-                        <li><a href="https://twitter.com/d_r_foundation" rel="noopener" target="_blank">Twitter / X</a></li>
-                        <li><a href="https://in.linkedin.com/company/d-r-foundation" rel="noopener" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-copy">© 2025 Devanshi Rathi Foundation. All rights reserved.</div>
-                <nav class="footer-soc" aria-label="Social media links">
-                    <a href="https://www.facebook.com/devanshirathifoundation/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-                    <a href="https://www.instagram.com/d_r_foundation/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-                    <a href="https://twitter.com/d_r_foundation" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
-                    <a href="https://in.linkedin.com/company/d-r-foundation" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-                </nav>
-            </div>
+    <section id="interests">
+      <p class="section-label">02 — Interests</p>
+      <h2>What drives me.</h2>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <div class="interest-icon">✦</div>
+          <p class="interest-title">AI & Marketing</p>
+          <p class="interest-desc">Exploring how artificial intelligence transforms brand strategy and consumer behavior.</p>
         </div>
+        <div class="interest-card">
+          <div class="interest-icon">◈</div>
+          <p class="interest-title">Brand Strategy</p>
+          <p class="interest-desc">Crafting narratives that resonate — from positioning to campaign execution.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">⬡</div>
+          <p class="interest-title">Consumer Insights</p>
+          <p class="interest-desc">Understanding what makes people click, buy, and stay loyal to a brand.</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">◎</div>
+          <p class="interest-title">Entrepreneurship</p>
+          <p class="interest-desc">Building ideas with purpose — the Babson way.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="section-label">03 — Projects</p>
+      <h2>Selected work.</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <span class="project-name">AI-Driven Campaign Strategy</span>
+          <span class="project-tag">Marketing · AI</span>
+        </div>
+        <div class="project-item">
+          <span class="project-name">Consumer Behavior Analysis</span>
+          <span class="project-tag">Research</span>
+        </div>
+        <div class="project-item">
+          <span class="project-name">Brand Positioning Playbook</span>
+          <span class="project-tag">Strategy</span>
+        </div>
+        <div class="project-item">
+          <span class="project-name">Resume</span>
+          <span class="project-tag">Download ↓</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">04 — Contact</p>
+      <h2>Let's connect.</h2>
+      <p>Open to internships, collaborations, and conversations about marketing and AI.</p>
+      <div class="contact-links">
+        <a href="mailto:advika@example.com">Email</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Advika Rathi</p>
+        <p>Babson College · Class of 2027</p>
+      </div>
     </footer>
 
-    <script>
-        'use strict';
-
-        /* ── Dark mode ──────────────────────────────────────────── */
-        const html = document.documentElement;
-        const btn = document.getElementById('themeBtn');
-        const thumb = btn.querySelector('.theme-thumb');
-
-        function applyTheme(dark) {
-            html.setAttribute('data-theme', dark ? 'dark' : 'light');
-            btn.setAttribute('aria-pressed', String(dark));
-            thumb.textContent = dark ? '🌙' : '☀️';
-            try {
-                localStorage.setItem('drf-theme', dark ? 'dark' : 'light');
-            } catch (e) {}
-        }
-        const saved = (() => {
-            try {
-                return localStorage.getItem('drf-theme');
-            } catch (e) {
-                return null;
-            }
-        })();
-        applyTheme(saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme:dark)').matches);
-        btn.addEventListener('click', () => applyTheme(html.getAttribute('data-theme') !== 'dark'));
-
-        /* ── Nav scroll ─────────────────────────────────────────── */
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {
-            passive: true
-        });
-
-        /* ── Hamburger ──────────────────────────────────────────── */
-        const burger = document.getElementById('burger');
-        const drawer = document.getElementById('drawer');
-        let drawerOpen = false;
-
-        function setDrawer(open) {
-            drawerOpen = open;
-            drawer.classList.toggle('open', open);
-            burger.setAttribute('aria-expanded', String(open));
-            burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-            const [a, b, c] = burger.querySelectorAll('span');
-            if (open) {
-                a.style.cssText = 'transform:translateY(7px) rotate(45deg)';
-                b.style.cssText = 'opacity:0';
-                c.style.cssText = 'transform:translateY(-7px) rotate(-45deg)';
-            } else {
-                [a, b, c].forEach(s => s.style.cssText = '');
-            }
-        }
-        burger.addEventListener('click', () => setDrawer(!drawerOpen));
-        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && drawerOpen) setDrawer(false);
-        });
-
-        /* ── Hero chess pieces ───────────────────────────────────── */
-        const piecesEl = document.getElementById('heroPieces');
-        const pcs = ['♜', '♞', '♝', '♛', '♚', '♟', '♙', '♖', '♘', '♗', '♕', '♔', '·', '·', '·', '·'];
-        for (let r = 0; r < 4; r++) {
-            for (let c = 0; c < 4; c++) {
-                const cell = document.createElement('div');
-                const dark = (r + c) % 2 === 0;
-                cell.className = 'hero-piece-cell ' + (dark ? 'dark-sq' : 'light-sq');
-                cell.textContent = pcs[r * 4 + c];
-                piecesEl.appendChild(cell);
-            }
-        }
-
-        /* ── Mission chessboard ─────────────────────────────────── */
-        const mb = document.getElementById('missionBoard');
-        if (mb) {
-            const pieces = {
-                '00': '♜',
-                '01': '♞',
-                '02': '♝',
-                '03': '♛',
-                '04': '♚',
-                '05': '♝',
-                '06': '♞',
-                '07': '♜',
-                '10': '♟',
-                '11': '♟',
-                '12': '♟',
-                '13': '♟',
-                '14': '♟',
-                '15': '♟',
-                '16': '♟',
-                '17': '♟',
-                '60': '♙',
-                '61': '♙',
-                '62': '♙',
-                '63': '♙',
-                '64': '♙',
-                '65': '♙',
-                '66': '♙',
-                '67': '♙',
-                '70': '♖',
-                '71': '♘',
-                '72': '♗',
-                '73': '♕',
-                '74': '♔',
-                '75': '♗',
-                '76': '♘',
-                '77': '♖',
-            };
-            const hl = {
-                '34': 'hl',
-                '43': 'hl',
-                '44': 'hl2',
-                '35': 'hl2'
-            };
-            for (let r = 0; r < 8; r++)
-                for (let c = 0; c < 8; c++) {
-                    const k = `${r}${c}`,
-                        dark = (r + c) % 2 !== 0;
-                    const cell = document.createElement('div');
-                    cell.className = 'bc ' + (dark ? 'b' : 'w') + (hl[k] ? ' ' + hl[k] : '');
-                    const p = pieces[k];
-                    if (p) {
-                        const s = document.createElement('span');
-                        s.className = 'bc-p';
-                        s.textContent = p;
-                        cell.appendChild(s);
-                    }
-                    mb.appendChild(cell);
-                }
-        }
-
-        /* ── Scroll reveal ───────────────────────────────────────── */
-        const revEls = document.querySelectorAll('.reveal');
-        const ro = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    ro.unobserve(e.target);
-                }
-            });
-        }, {
-            threshold: 0.08,
-            rootMargin: '0px 0px -30px 0px'
-        });
-        revEls.forEach(el => ro.observe(el));
-
-        /* ── Count-up ────────────────────────────────────────────── */
-        document.querySelectorAll('.count').forEach(el => {
-            const obs = new IntersectionObserver(([e]) => {
-                if (!e.isIntersecting) return;
-                obs.disconnect();
-                const target = +el.dataset.target,
-                    dur = 1500,
-                    t0 = performance.now();
-                const tick = now => {
-                    const p = Math.min((now - t0) / dur, 1);
-                    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
-                    if (p < 1) requestAnimationFrame(tick);
-                };
-                requestAnimationFrame(tick);
-            }, {
-                threshold: .6
-            });
-            obs.observe(el);
-        });
-
-        /* ── Form ────────────────────────────────────────────────── */
-        const form = document.getElementById('contactForm');
-        const successEl = document.getElementById('formSuccess');
-        const submitBtn = document.getElementById('fSubmit');
-        const submitTxt = document.getElementById('fSubmitTxt');
-
-        function validateFld(field) {
-            if (field.type === 'checkbox') {
-                const e = document.getElementById('err-consent');
-                const ok = field.checked;
-                if (e) {
-                    e.textContent = ok ? '' : 'Please give your consent to continue.';
-                    e.style.display = ok ? 'none' : 'block';
-                }
-                return ok;
-            }
-            const id = field.id.replace('f', '').toLowerCase();
-            const g = document.getElementById('fg-' + id);
-            const ok = field.checkValidity();
-            if (g) g.classList.toggle('err', !ok);
-            return ok;
-        }
-        form.querySelectorAll('input,select,textarea').forEach(f => {
-            f.addEventListener('blur', () => validateFld(f));
-            f.addEventListener('input', () => {
-                if (f.classList.contains('dirty')) validateFld(f);
-            });
-        });
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            let valid = true;
-            form.querySelectorAll('input,select,textarea').forEach(f => {
-                f.classList.add('dirty');
-                if (!validateFld(f)) valid = false;
-            });
-            if (!valid) {
-                const first = form.querySelector('.err input,.err textarea,.err select');
-                if (first) first.focus();
-                return;
-            }
-            submitBtn.disabled = true;
-            submitTxt.textContent = 'Sending…';
-            setTimeout(() => {
-                form.style.display = 'none';
-                successEl.classList.add('show');
-                successEl.focus();
-            }, 900);
-        });
-    </script>
+  </div>
 </body>
-
 </html>
