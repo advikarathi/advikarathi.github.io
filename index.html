@@ -45,7 +45,7 @@
         
         body {
             font-family: 'DM Sans', sans-serif;
-            background: radial-gradient(circle at top left, rgba(209, 122, 66, 0.12), transparent 22%), radial-gradient(circle at bottom right, rgba(176, 90, 47, 0.10), transparent 18%), var(--bg);
+            background: radial-gradient(circle at top left, rgba(209, 122, 66, 0.14), transparent 22%), radial-gradient(circle at bottom right, rgba(176, 90, 47, 0.10), transparent 18%), linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
             color: var(--text);
             line-height: 1.7;
             font-size: 16px;
@@ -56,8 +56,18 @@
             content: '';
             position: fixed;
             inset: 0;
-            background-image: radial-gradient(circle at 25% 10%, rgba(255, 255, 255, 0.25), transparent 16%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.16), transparent 12%);
+            background-image: radial-gradient(circle at 25% 10%, rgba(255, 255, 255, 0.22), transparent 16%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.16), transparent 12%);
             pointer-events: none;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.03) 100%);
+            pointer-events: none;
+            opacity: 0.95;
+            mix-blend-mode: screen;
         }
         
         header {
@@ -79,13 +89,86 @@
         header::after {
             content: '';
             position: absolute;
-            right: -4rem;
-            top: -4rem;
-            width: 190px;
-            height: 190px;
+            right: -4.5rem;
+            top: -4.5rem;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(176, 90, 47, 0.18), transparent 55%);
+            background: radial-gradient(circle, rgba(176, 90, 47, 0.2), transparent 55%);
             pointer-events: none;
+            filter: blur(2px);
+        }
+        
+        .header-badge {
+            position: absolute;
+            left: 2rem;
+            bottom: -0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: min(260px, calc(100% - 4rem));
+            padding: 0.95rem 1.15rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            color: var(--text);
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            box-shadow: 0 18px 40px rgba(46, 34, 26, 0.08);
+            backdrop-filter: blur(18px);
+            z-index: 1;
+        }
+        
+        .header-badge::before {
+            content: '•';
+            margin-right: 0.55rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        h2 {
+            position: relative;
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.9rem, 2.9vw, 2.4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -0.45rem;
+            width: 3rem;
+            height: 0.35rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(176, 90, 47, 0.95), rgba(209, 122, 66, 0.4));
+        }
+        
+        section {
+            padding: 2.75rem 2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            background-image: radial-gradient(circle at top left, rgba(209, 122, 66, 0.04), transparent 28%), radial-gradient(circle at 88% 10%, rgba(176, 90, 47, 0.05), transparent 22%);
+        }
+        
+        section::after {
+            content: '';
+            position: absolute;
+            right: -8%;
+            top: 22%;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(224, 158, 111, 0.18), transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translateY(-18%);
         }
         
         .header-name {
@@ -545,6 +628,7 @@
         <div>
             <h1 class="header-name">Advika <em>Rathi</em></h1>
             <p class="hero-tagline">👋 Business Analytics · Marketing · AI | Senior at Babson College, building tools and experiences that connect data to people.</p>
+            <div class="header-badge">Signal. Strategy. Synthesis.</div>
         </div>
         <div class="header-meta">
             <a href="tel:+17814688929">📞 +1 781 468 8929</a><br>
