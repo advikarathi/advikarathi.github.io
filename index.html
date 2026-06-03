@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advika Rathi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,904 +18,464 @@
         }
         
          :root {
-            --bg: #f9f6f2;
-            --bg2: #f4efe7;
+            --bg: #f7f2eb;
             --surface: #ffffff;
-            --surface-soft: #fffaf5;
-            --text: #1b1712;
-            --text2: #5b5349;
-            --accent: #b05a2f;
-            --accent2: #d17c42;
-            --border: #e3d9ce;
-            --shadow: 0 25px 60px rgba(46, 34, 26, 0.09);
+            --text: #1d1914;
+            --muted: #5b5349;
+            --accent: #b15a2f;
+            --border: rgba(29, 25, 20, 0.08);
+            --shadow: 0 30px 70px rgba(29, 25, 20, 0.08);
+            --radius: 32px;
         }
         
-        @media (prefers-color-scheme: dark) {
-             :root {
-                --bg: #1b1816;
-                --bg2: #231f1a;
-                --surface: #26221d;
-                --surface-soft: #2b2722;
-                --text: #f4ede6;
-                --text2: #b7aa9d;
-                --accent: #e8a86a;
-                --accent2: #f1c48d;
-                --border: #3b362f;
-                --shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
-            }
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
             font-family: 'DM Sans', sans-serif;
-            background: radial-gradient(circle at top left, rgba(209, 122, 66, 0.14), transparent 22%), radial-gradient(circle at bottom right, rgba(176, 90, 47, 0.10), transparent 18%), linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+            background: radial-gradient(circle at top left, rgba(177, 90, 47, 0.12), transparent 20%), radial-gradient(circle at bottom right, rgba(177, 90, 47, 0.08), transparent 18%), linear-gradient(180deg, #faf5ef 0%, #f3ede5 100%);
             color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
             min-height: 100vh;
+            line-height: 1.65;
         }
         
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background-image: radial-gradient(circle at 25% 10%, rgba(255, 255, 255, 0.22), transparent 16%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.16), transparent 12%);
+            background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.24), transparent 16%), radial-gradient(circle at 78% 24%, rgba(255, 255, 255, 0.18), transparent 14%);
             pointer-events: none;
         }
         
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0.03) 100%);
-            pointer-events: none;
-            opacity: 0.95;
-            mix-blend-mode: screen;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
         
-        header {
-            padding: 3.5rem 2rem 2rem;
-            max-width: 920px;
+        .page-shell {
+            width: min(1120px, calc(100% - 2rem));
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: end;
-            gap: 2rem;
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            background: var(--surface);
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
+            padding: 2rem 0 3rem;
         }
         
-        header::after {
-            content: '';
-            position: absolute;
-            right: -4.5rem;
-            top: -4.5rem;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(176, 90, 47, 0.2), transparent 55%);
-            pointer-events: none;
-            filter: blur(2px);
-        }
-        
-        .header-badge {
-            position: absolute;
-            left: 2rem;
-            bottom: -0.75rem;
-            display: inline-flex;
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            width: min(260px, calc(100% - 4rem));
-            padding: 0.95rem 1.15rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.75);
-            color: var(--text);
-            font-size: 0.9rem;
-            letter-spacing: 0.04em;
-            box-shadow: 0 18px 40px rgba(46, 34, 26, 0.08);
-            backdrop-filter: blur(18px);
-            z-index: 1;
-        }
-        
-        .header-badge::before {
-            content: '•';
-            margin-right: 0.55rem;
-            color: var(--accent);
-            font-weight: 700;
-        }
-        
-        h2 {
-            position: relative;
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.9rem, 2.9vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-        }
-        
-        h2::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: -0.45rem;
-            width: 3rem;
-            height: 0.35rem;
-            border-radius: 999px;
-            background: linear-gradient(90deg, rgba(176, 90, 47, 0.95), rgba(209, 122, 66, 0.4));
-        }
-        
-        section {
-            padding: 2.75rem 2rem;
-            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 20px 50px rgba(29, 25, 20, 0.07);
+            position: sticky;
+            top: 1rem;
+            z-index: 10;
+        }
+        
+        .brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.05rem;
+            letter-spacing: -0.04em;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            background: rgba(177, 90, 47, 0.12);
+            border: 1px solid rgba(177, 90, 47, 0.18);
+        }
+        
+        .hero {
             margin-top: 2rem;
+            padding: 4.5rem 2rem 3rem;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
-            background-image: radial-gradient(circle at top left, rgba(209, 122, 66, 0.04), transparent 28%), radial-gradient(circle at 88% 10%, rgba(176, 90, 47, 0.05), transparent 22%);
         }
         
-        section::after {
+        .hero::before {
             content: '';
             position: absolute;
-            right: -8%;
-            top: 22%;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(224, 158, 111, 0.18), transparent 60%);
+            right: -2rem;
+            top: -2rem;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
+            background: radial-gradient(circle, rgba(177, 90, 47, 0.12), transparent 55%);
             pointer-events: none;
-            transform: translateY(-18%);
         }
         
-        .header-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4.4rem);
-            line-height: 1.02;
-            letter-spacing: -0.02em;
-        }
-        
-        .header-name em {
-            font-style: italic;
-            color: var(--accent);
-        }
-        
-        .header-meta {
-            font-size: 14px;
-            color: var(--text2);
-            line-height: 1.8;
-            text-align: right;
-        }
-        
-        .header-meta a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        .header-meta a:hover {
-            text-decoration: underline;
-        }
-        
-        .hero-tagline {
-            margin-top: 0.9rem;
-            font-size: 1.05rem;
-            color: var(--text2);
-            max-width: 540px;
-        }
-        
-        nav {
-            max-width: 920px;
-            margin: 1.5rem auto 0;
-            padding: 0 2rem 1rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        nav a {
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
+        .eyebrow {
+            display: inline-flex;
             text-transform: uppercase;
-            color: var(--text2);
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.62);
-            padding: 0.8rem 1rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        nav a:hover {
+            letter-spacing: 0.22em;
+            font-size: 0.75rem;
+            font-weight: 700;
             color: var(--accent);
-            transform: translateY(-1px);
-            background: var(--surface);
+            margin-bottom: 1.4rem;
         }
         
-        main {
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(3rem, 6vw, 5.8rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            max-width: 12ch;
+            margin-bottom: 1.3rem;
         }
         
-        section {
-            padding: 2.75rem 2rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            margin-top: 2rem;
+        h1 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .hero-copy {
+            max-width: 58rem;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .section-head {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
         }
         
         .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.16em;
+            font-size: 0.8rem;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
             color: var(--accent);
-            margin-bottom: 1rem;
         }
         
         h2 {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.9rem, 2.9vw, 2.4rem);
-            font-weight: 400;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
+            font-size: clamp(2rem, 3.2vw, 3.3rem);
+            line-height: 1.05;
+            max-width: 12ch;
+        }
+        
+        .work-list {
+            display: grid;
+            gap: 1.25rem;
+        }
+        
+        .work-card {
+            display: block;
+            padding: 2rem;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--border);
+            box-shadow: 0 22px 50px rgba(29, 25, 20, 0.06);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(177, 90, 47, 0.22);
+        }
+        
+        .work-eyebrow {
+            display: inline-flex;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.9rem;
+        }
+        
+        .work-card h3 {
+            margin-bottom: 0.95rem;
+            font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+            line-height: 1.08;
+        }
+        
+        .work-card p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 1.35rem;
+            max-width: 60ch;
+        }
+        
+        .work-foot {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+            letter-spacing: 0.01em;
         }
         
         .about-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2.5rem;
+            grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+            gap: 2rem;
             align-items: start;
         }
         
-        .about-text p {
-            color: var(--text2);
-            margin-bottom: 1.15rem;
+        .about-copy p {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 1.4rem;
+            max-width: 64ch;
         }
         
-        .about-text p strong {
+        .about-copy p strong {
             color: var(--text);
-            font-weight: 600;
-        }
-        
-        .highlight-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: var(--surface-soft);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            padding: 6px 14px;
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: 600;
-            margin: 4px 4px 4px 0;
-        }
-        
-        .photo-stack {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .photo-stack img {
-            width: 100%;
-            border-radius: 22px;
-            display: block;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-            object-fit: cover;
-        }
-        
-        .exp-list {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .exp-item {
-            padding: 1.35rem 1.35rem;
-            border-radius: 20px;
-            background: var(--surface-soft);
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1rem;
-        }
-        
-        .exp-role {
-            font-weight: 600;
-            font-size: 15px;
-            margin-bottom: 0.35rem;
-        }
-        
-        .exp-org {
-            font-size: 13px;
-            color: var(--accent);
             font-weight: 700;
-            margin-bottom: 0.8rem;
         }
         
-        .exp-bullets li {
-            font-size: 14px;
-            color: var(--text2);
-            padding-left: 1.1rem;
-            position: relative;
-            margin-bottom: 0.7rem;
+        .info-panel {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .info-card {
+            padding: 1.5rem;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border);
+        }
+        
+        .info-card strong {
+            display: block;
+            margin-bottom: 0.85rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        
+        .info-card p {
+            color: var(--muted);
             line-height: 1.7;
         }
         
-        .exp-bullets li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0.2rem;
-            color: var(--accent);
-            font-size: 1rem;
-            line-height: 1;
-        }
-        
-        .exp-date {
-            font-size: 12px;
-            color: var(--text2);
-            white-space: nowrap;
-            text-align: right;
-            margin-top: 3px;
-        }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-        }
-        
-        .feat-card {
-            background: var(--surface-soft);
-            padding: 1.75rem;
-            border-radius: 24px;
+        .contact-panel {
+            margin-top: 3rem;
+            padding: 2rem;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.86);
             border: 1px solid var(--border);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: var(--shadow);
         }
         
-        .feat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 26px 50px rgba(46, 34, 26, 0.09);
+        .contact-panel p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
         }
         
-        .feat-tag {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 0.85rem;
-        }
-        
-        .feat-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.55rem;
-            line-height: 1.3;
-        }
-        
-        .feat-desc {
-            font-size: 14px;
-            color: var(--text2);
-            line-height: 1.75;
-        }
-        
-        .feat-stack {
-            margin-top: 1.15rem;
+        .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 0.9rem;
         }
         
-        .feat-stack span {
-            font-size: 11px;
-            padding: 6px 10px;
+        .contact-links a {
+            padding: 0.95rem 1.35rem;
             border-radius: 999px;
-            background: var(--surface);
-            color: var(--text2);
             border: 1px solid var(--border);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-        }
-        
-        .skill-group {
-            padding: 1.25rem 1.35rem;
-            border-radius: 18px;
-            background: var(--surface-soft);
-            border: 1px solid var(--border);
-        }
-        
-        .skill-group h4 {
-            font-size: 11px;
+            background: rgba(255, 255, 255, 0.96);
             font-weight: 700;
-            letter-spacing: 0.11em;
-            text-transform: uppercase;
-            color: var(--text2);
-            margin-bottom: 0.75rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
         
-        .skill-group p {
-            font-size: 14px;
-            color: var(--text);
-            line-height: 1.8;
-        }
-        
-        .interests-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 1.4rem;
-        }
-        
-        .int-tag {
-            font-size: 15px;
-            font-family: 'DM Serif Display', serif;
-            font-style: italic;
-            padding: 0.55rem 1.1rem;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text2);
-            transition: all 0.2s ease;
-            background: var(--surface-soft);
-        }
-        
-        .int-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(224, 158, 111, 0.15);
-        }
-        
-        .contact-row {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.25rem;
-        }
-        
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.85rem 1.4rem;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-        
-        .contact-btn.primary {
-            background: var(--accent);
-            color: #fff;
-            box-shadow: 0 12px 30px rgba(176, 90, 47, 0.18);
-        }
-        
-        .contact-btn.primary:hover {
-            background: var(--accent2);
-            transform: translateY(-1px);
-        }
-        
-        .contact-btn.secondary {
-            border: 1px solid var(--border);
-            color: var(--text);
-            background: var(--surface-soft);
-        }
-        
-        .contact-btn.secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-1px);
+        .contact-links a:hover {
+            transform: translateY(-2px);
+            border-color: rgba(177, 90, 47, 0.24);
         }
         
         footer {
-            border-top: 1px solid var(--border);
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--text2);
-        }
-        
-        footer p,
-        footer a {
-            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border);
         }
         
         footer a {
             color: var(--accent);
-            text-decoration: none;
         }
         
-        @media (max-width: 800px) {
-            header {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .header-meta {
-                text-align: center;
+        @media (max-width: 900px) {
+            .site-nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem 1.25rem;
             }
             .about-grid {
                 grid-template-columns: 1fr;
             }
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-            footer {
-                flex-direction: column;
-                gap: 0.75rem;
-                text-align: center;
-            }
-            .exp-item {
-                grid-template-columns: 1fr;
-            }
         }
         
-        @media (max-width: 600px) {
-            header {
-                padding: 2.5rem 1.5rem 1.5rem;
+        @media (max-width: 700px) {
+            .page-shell {
+                width: min(100%, calc(100% - 1rem));
+                padding: 1.5rem 0 2rem;
             }
-            nav {
-                padding: 0 1.5rem 1rem;
+            .hero {
+                padding: 3.5rem 1.5rem 2.5rem;
             }
-            main {
-                padding: 0 1.5rem 3rem;
+            h1 {
+                font-size: clamp(2.8rem, 12vw, 4.5rem);
             }
-            section {
-                padding: 2rem 1.5rem;
+            .work-card {
+                padding: 1.75rem;
             }
-        }
-        
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
+            h2 {
+                font-size: clamp(1.9rem, 8vw, 2.6rem);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        section {
-            animation: fadeUp 0.45s ease both;
-        }
-        
-        section:nth-of-type(1) {
-            animation-delay: 0.05s;
-        }
-        
-        section:nth-of-type(2) {
-            animation-delay: 0.12s;
-        }
-        
-        section:nth-of-type(3) {
-            animation-delay: 0.19s;
-        }
-        
-        section:nth-of-type(4) {
-            animation-delay: 0.26s;
-        }
-        
-        section:nth-of-type(5) {
-            animation-delay: 0.33s;
-        }
-        
-        section:nth-of-type(6) {
-            animation-delay: 0.40s;
         }
     </style>
 </head>
 
 <body>
+    <div class="page-shell">
+        <header class="site-nav">
+            <div class="brand">Advika Rathi</div>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#about">Info</a>
+                <a href="#contact">Contact</a>
+                <a href="https://linkedin.com/in/advikarathi" target="_blank" class="nav-cta">LinkedIn</a>
+                <a href="mailto:advikarathi2@gmail.com" class="nav-cta">Email</a>
+            </div>
+        </header>
 
-    <header>
-        <div>
-            <h1 class="header-name">Advika <em>Rathi</em></h1>
-            <p class="hero-tagline">👋 Business Analytics · Marketing · AI | Senior at Babson College, building tools and experiences that connect data to people.</p>
-            <div class="header-badge">Signal. Strategy. Synthesis.</div>
-        </div>
-        <div class="header-meta">
-            <a href="tel:+17814688929">📞 +1 781 468 8929</a><br>
-            <a href="mailto:advikarathi2@gmail.com">✉️ advikarathi2@gmail.com</a><br>
-            <a href="https://linkedin.com/in/advikarathi" target="_blank">LinkedIn ↗</a><br>📍 Wellesley, Massachusetts
-        </div>
-    </header>
+        <section class="hero">
+            <div class="eyebrow">Product-minded AI strategist</div>
+            <h1>Advika <span>Rathi</span></h1>
+            <p class="hero-copy">I craft data-informed experiences, AI tools, and brand stories that help teams move faster and ideas land with clarity.</p>
+            <div class="hero-meta">
+                <span>Senior, Babson College</span>
+                <span>Business Analytics · Marketing · AI</span>
+            </div>
+        </section>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#interests">Interests</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <main>
+        <section id="work">
+            <div class="section-head">
+                <div class="section-label">Work</div>
+                <h2>Selected projects</h2>
+            </div>
+            <div class="work-list">
+                <a class="work-card" href="#">
+                    <div class="work-eyebrow">AI Tool · Faculty Operations</div>
+                    <h3>AI Bulk Grading App</h3>
+                    <p>Built a production-ready grading automation tool used by faculty to batch-review student submissions, apply rubric-based AI evaluation, and return structured feedback at scale.</p>
+                    <div class="work-foot">Python · Streamlit · Azure · Generative AI</div>
+                </a>
+                <a class="work-card" href="#">
+                    <div class="work-eyebrow">AI Product · Student Support</div>
+                    <h3>AI Peer Tutoring Agent</h3>
+                    <p>Designed an AI tutoring agent for Babson’s SharePoint, helping students with study skills, exam prep, note-taking, and off-hours support through a polished conversational experience.</p>
+                    <div class="work-foot">Agent Design · Workflow · UX Strategy</div>
+                </a>
+                <a class="work-card" href="#">
+                    <div class="work-eyebrow">Marketing Analytics · eCommerce</div>
+                    <h3>Meta Ads Optimization</h3>
+                    <p>Revitalized underperforming campaigns with A/B testing, improved relevance scores by 25%, and reduced cost-per-acquisition by 10% through strategic creative and analytics.</p>
+                    <div class="work-foot">Meta Ads · A/B Testing · Adobe · Canva</div>
+                </a>
+                <a class="work-card" href="#">
+                    <div class="work-eyebrow">Data Analysis · Operations</div>
+                    <h3>Operational Efficiency Analysis</h3>
+                    <p>Analyzed workflows and surfaced a 15% cost-savings recommendation using Minitab, R Studio, and actionable insights for client-facing operations.</p>
+                    <div class="work-foot">Minitab · R Studio · Excel · Process Design</div>
+                </a>
+            </div>
+        </section>
 
         <section id="about">
-            <div class="section-label">About</div>
+            <div class="section-head">
+                <div class="section-label">Info</div>
+                <h2>A sharper view of what I do</h2>
+            </div>
             <div class="about-grid">
-                <div class="about-text">
-                    <h2>Building at the edge of AI & business.</h2>
-                    <p>I'm a <strong>senior at Babson College</strong> studying Business Analytics and Marketing (GPA: 3.70), with a deep interest in how AI reshapes the way brands operate and connect with people.</p>
-                    <p>I hold an <strong>AI Innovation Fellowship</strong> and serve as the <strong>Dean's AI Innovation Intern</strong> in the Undergraduate School, where I've built and deployed production AI tools used by faculty and staff. I also collaborate
-                        with faculty on applied AI research and instructional design projects.</p>
-                    <p>I find the overlap between data, creativity, and strategy endlessly interesting — whether that's optimizing ad campaigns, building automated workflows, or exploring what AI means for consumer behavior.</p>
-                    <div style="margin-top:1rem; display:flex; flex-wrap:wrap; gap:.5rem;">
-                        <span class="highlight-pill">Dean's List × 4 semesters</span>
-                        <span class="highlight-pill">Presidential Scholar</span>
-                        <span class="highlight-pill">AI Innovation Fellow</span>
-                        <span class="highlight-pill">GPA 3.70</span>
-                    </div>
+                <div class="about-copy">
+                    <p>I'm a senior at Babson College studying Business Analytics and Marketing with a deep interest in how AI reshapes the way brands move and connect with people.</p>
+                    <p>I build tools, dashboards, and experiences that bring data and strategy together — whether that's automating workflows, improving product decisions, or helping educators use AI more effectively.</p>
+                    <p>My work sits at the intersection of analysis, creativity, and impact: taking complex problems and turning them into grounded, human-first solutions that feel effortless.</p>
                 </div>
-                <div class="photo-stack">
-                    <img src="images/photo.png" alt="Advika at the Babson AI Luncheon">
-                    <img src="https://picsum.photos/300/200" alt="Babson campus">
+                <div class="info-panel">
+                    <div class="info-card">
+                        <strong>Highlights</strong>
+                        <p>AI Innovation Fellow · Dean's AI Innovation Intern · Presidential Scholar · Babson Dean's List</p>
+                    </div>
+                    <div class="info-card">
+                        <strong>Tools</strong>
+                        <p>Python · SQL · Tableau · Power BI · Streamlit · Azure · ChatGPT · Adobe Illustrator · Canva</p>
+                    </div>
+                    <div class="info-card">
+                        <strong>Interests</strong>
+                        <p>AI in education, brand strategy, consumer insights, entrepreneurship, fitness, and travel.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience">
-            <div class="section-label">Work Experience</div>
-            <h2>Where I've worked.</h2>
-            <div class="exp-list">
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">AI Innovation Fellow</div>
-                        <div class="exp-org">Babson College — AI Innovation Fellowship (with Phil)</div>
-                        <ul class="exp-bullets">
-                            <li>One of 5 students selected college-wide for Babson's competitive AI Innovation Fellowship, working directly with Phil on applied AI strategy and initiatives.</li>
-                            <li>Built and deployed the AI Bulk Grading App using Python, Streamlit, GitHub, and Azure — a production tool now used live by Babson faculty to automate rubric-based evaluation and feedback at scale.</li>
-                            <li>Exploring how emerging AI tools can be integrated into business education, student workflows, and institutional operations.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">2024 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Dean's AI Innovation Intern</div>
-                        <div class="exp-org">Babson College — Undergraduate School · Reports to Rob Major</div>
-                        <ul class="exp-bullets">
-                            <li>Designing and building a Student Outcomes Dashboard to monitor AI-related student metrics pulled from across the Babson student experience.</li>
-                            <li>Auditing how generative and agentic AI is currently used across undergraduate operations — FME, EPS 1000, Career Development, Student Advising, and peer tutoring — identifying gaps and recommending where AI tools could be applied
-                                responsibly.
-                            </li>
-                            <li>Developing an AI peer tutoring agent to live on Babson's SharePoint, supporting students with study skills, exam prep, note-taking, and off-hours tutoring assistance.</li>
-                            <li>Working on Career Development AI integration: aligning Roger (Babson's entrepreneurial AI agent) with uConnect's search agent to create a seamless, complementary experience for students navigating career resources.</li>
-                            <li>Collaborating with Professor Ruth on an API key management project and building a course-facing website in Lovable — integrating AI tools directly into the student learning experience.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Summer 2026</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Presidential Scholar Peer Mentor</div>
-                        <div class="exp-org">Babson College — Presidential Scholars Program</div>
-                        <ul class="exp-bullets">
-                            <li>Mentoring incoming Presidential Scholars — Babson's most academically distinguished admits — on academics, campus life, and navigating college successfully.</li>
-                            <li>Selected as a mentor based on academic standing and leadership as a Presidential Scholar myself.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Spring 2024 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Managerial Accounting Peer Tutor</div>
-                        <div class="exp-org">Babson College — Peer Tutoring Program</div>
-                        <ul class="exp-bullets">
-                            <li>Providing one-on-one and group tutoring in Managerial Accounting, recognized as a top performer in the course.</li>
-                            <li>Helping students build conceptual understanding and exam readiness across core accounting topics.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Spring 2026 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Event Assistant</div>
-                        <div class="exp-org">Babson College — Arthur M. Blank School for Entrepreneurial Leadership</div>
-                        <ul class="exp-bullets">
-                            <li>Supporting event logistics and operations for the Blank School, one of Babson's flagship entrepreneurial leadership programs.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Spring 2026 – Present</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Math Resource Center Consultant</div>
-                        <div class="exp-org">Babson College — Math Resource Center (MRC)</div>
-                        <ul class="exp-bullets">
-                            <li>Served as a walk-in consultant helping students with quantitative coursework — algebra, Excel modeling, hypothesis testing, regression, and finance applications.</li>
-                            <li>Selected based on high performance across Babson's core QTM courses; acted as a coach focused on building students' conceptual understanding rather than just providing answers.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Spring 2025</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Sales &amp; Marketing Intern</div>
-                        <div class="exp-org">Sotheby's · New Delhi</div>
-                        <ul class="exp-bullets">
-                            <li>Designed social media graphics and print materials in Canva and Adobe Illustrator; helped boost auction attendance by 15%.</li>
-                            <li>Streamlined CRM updates and client tracking in Excel, cutting weekly data entry from 2 hours to 30 minutes.</li>
-                            <li>Revitalized underperforming Meta Ads via A/B testing — achieved 25% improvement in ad relevance scores and 10% reduction in cost per acquisition.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Summer 2025</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Business Analyst Intern</div>
-                        <div class="exp-org">Grant Thornton · New Delhi</div>
-                        <ul class="exp-bullets">
-                            <li>Produced email templates that drove a 20% lift in open rates through consistent brand messaging.</li>
-                            <li>Analyzed operational data in Minitab and R Studio, surfacing a 15% cost savings recommendation.</li>
-                            <li>Mapped client communication workflows in Visio, reducing client onboarding time by two days.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Summer 2024</div>
-                </div>
-
-                <div class="exp-item">
-                    <div>
-                        <div class="exp-role">Business Development Intern</div>
-                        <div class="exp-org">ASK Wealth Advisors · New Delhi</div>
-                        <ul class="exp-bullets">
-                            <li>Delivered a financial presentation on mutual funds to senior leadership, earning direct commendation.</li>
-                            <li>Self-learned financial concepts with no prior background; completed assigned tasks 25% faster than other interns.</li>
-                        </ul>
-                    </div>
-                    <div class="exp-date">Summer 2022</div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="section-label">Featured Projects</div>
-            <h2>Things I've built.</h2>
-            <div class="featured-grid">
-
-                <div class="feat-card">
-                    <div class="feat-tag">AI Tool · AI Innovation Fellowship</div>
-                    <div class="feat-title">AI Bulk Grading App</div>
-                    <p class="feat-desc">Built as one of 5 selected AI Innovation Fellows. A production-grade grading automation tool deployed for use by Babson faculty — accepts batch submissions, applies rubric-based AI evaluation, and returns structured feedback at scale.</p>
-                    <div class="feat-stack">
-                        <span>Python</span><span>Streamlit</span><span>Azure</span><span>GitHub</span><span>Generative AI</span>
-                    </div>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-tag">AI Agent · Dean's AI Internship</div>
-                    <div class="feat-title">AI Peer Tutoring Agent</div>
-                    <p class="feat-desc">Designing an AI tutoring agent for Babson's SharePoint, helping students with study skills, exam prep, note-taking, and off-hours support — scoped, prototyped, and iterated with faculty project leads.</p>
-                    <div class="feat-stack">
-                        <span>Agentic AI</span><span>SharePoint</span><span>Workflow Design</span><span>Prototyping</span>
-                    </div>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-tag">Marketing Analytics · Sotheby's</div>
-                    <div class="feat-title">Meta Ads Optimization</div>
-                    <p class="feat-desc">Revitalized underperforming ad campaigns through systematic A/B testing of copy and visuals. Improved ad relevance scores by 25% and reduced cost per acquisition by 10%.</p>
-                    <div class="feat-stack">
-                        <span>Meta Ads</span><span>A/B Testing</span><span>Canva</span><span>Adobe Illustrator</span>
-                    </div>
-                </div>
-
-                <div class="feat-card">
-                    <div class="feat-tag">Data Analysis · Grant Thornton</div>
-                    <div class="feat-title">Operational Efficiency Analysis</div>
-                    <p class="feat-desc">Used Minitab and R Studio to identify operational bottlenecks and model inefficiencies across client workflows, delivering a 15% cost-savings recommendation to leadership.</p>
-                    <div class="feat-stack">
-                        <span>Minitab</span><span>R Studio</span><span>Visio</span><span>Excel</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="section-label">Skills</div>
-            <h2>What I work with.</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h4>Data & Analytics</h4>
-                    <p>Python, SQL, Tableau, Power BI, Excel (Advanced), Minitab, R Studio</p>
-                </div>
-                <div class="skill-group">
-                    <h4>AI Tools</h4>
-                    <p>ChatGPT, Claude, Gemini, Copilot, Replit, Prompt Engineering, AI-assisted analysis</p>
-                </div>
-                <div class="skill-group">
-                    <h4>Design</h4>
-                    <p>Canva, Adobe Illustrator, Photoshop, InDesign</p>
-                </div>
-                <div class="skill-group">
-                    <h4>Analytics Techniques</h4>
-                    <p>Business Analytics, Financial Modeling, A/B Testing</p>
-                </div>
-                <div class="skill-group">
-                    <h4>Dev & Deployment</h4>
-                    <p>Streamlit, GitHub, Azure, Lovable, Python scripting, workflow automation</p>
-                </div>
-                <div class="skill-group">
-                    <h4>Languages</h4>
-                    <p>English (fluent), Hindi (native), Spanish (conversational)</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="interests">
-            <div class="section-label">Interests</div>
-            <h2>What I'm into.</h2>
-            <div class="interests-row">
-                <div class="int-tag">AI & Marketing</div>
-                <div class="int-tag">Brand Strategy</div>
-                <div class="int-tag">Consumer Insights</div>
-                <div class="int-tag">Entrepreneurship</div>
-                <div class="int-tag">Business Analytics</div>
-                <div class="int-tag">AI in Education</div>
-                <div class="int-tag">Pilates & Weightlifting</div>
-                <div class="int-tag">Travel</div>
-            </div>
-            <div style="margin-top:1.75rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-                <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:1.25rem;">
-                    <div style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">Travel</div>
-                    <p style="font-family:'DM Serif Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:0.5rem;">25+ countries & counting.</p>
-                    <p style="font-size:13.5px; color:var(--text2); line-height:1.6;">I spent a semester abroad in Madrid, which cemented a love for exploring new cultures, languages, and perspectives. Traveling has shaped how I think about global markets and consumer behavior.</p>
-                </div>
-                <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:1.25rem;">
-                    <div style="font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem;">Fitness</div>
-                    <p style="font-family:'DM Serif Display',serif; font-size:1.1rem; font-weight:400; margin-bottom:0.5rem;">Pilates & weightlifting.</p>
-                    <p style="font-size:13.5px; color:var(--text2); line-height:1.6;">Fitness is a non-negotiable part of my routine. I split my time between reformer Pilates and the weight room — both demand the same discipline and consistency I bring to my work.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
+        <section id="contact" class="contact-panel">
             <div class="section-label">Contact</div>
-            <h2>Let's connect.</h2>
-            <p style="color:var(--text2); max-width:520px;">Open to marketing internships, AI project collaborations, and conversations about the future of AI in business. If you'd like to collaborate, let's make something impactful together.</p>
-            <div class="contact-row">
-                <a href="mailto:advikarathi2@gmail.com" class="contact-btn primary">✉️ Send an email</a>
-                <a href="https://linkedin.com/in/advikarathi" target="_blank" class="contact-btn secondary">🔗 View LinkedIn</a>
-                <a href="tel:+17814688929" class="contact-btn secondary">📞 Call me</a>
+            <h2>Let’s build something memorable.</h2>
+            <p>Open to internships, AI collaborations, and roles at the intersection of product, data, and creative strategy. Ready to connect and make an impact.</p>
+            <div class="contact-links">
+                <a href="mailto:advikarathi2@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/advikarathi" target="_blank">LinkedIn</a>
+                <a href="tel:+17814688929">Call</a>
             </div>
         </section>
 
-    </main>
-
-    <footer>
-        <p>© 2026 Advika Rathi · Babson College</p>
-        <a href="mailto:advikarathi2@gmail.com">advikarathi2@gmail.com</a>
-    </footer>
-
+        <footer>
+            <div>© 2026 Advika Rathi</div>
+            <div><a href="mailto:advikarathi2@gmail.com">advikarathi2@gmail.com</a></div>
+        </footer>
+    </div>
 </body>
 
 </html>
